@@ -1,11 +1,23 @@
 [
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_list_layout.xml",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/item_list_layout.xml"
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_movie_layout.xml",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/item_movie_layout.xml"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_movie_list.xml",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_movie_list.xml"
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_detail.xml",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_detail.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/item_movie_grid_layout.xml",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/item_movie_grid_layout.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_search.xml",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_search.xml"
     },
     {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",

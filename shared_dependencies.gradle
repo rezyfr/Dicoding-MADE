@@ -56,8 +56,6 @@ dependencies{
     implementation Dependencies.coreKtx
     implementation Dependencies.constraintLayout
     implementation Dependencies.material
-    implementation Dependencies.activityKtx
-    implementation Dependencies.fragmentKtx
     implementation Dependencies.lifeCycle
     implementation Dependencies.navFragment
     implementation Dependencies.navUi

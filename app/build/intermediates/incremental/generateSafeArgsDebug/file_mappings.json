@@ -1,1 +1,1 @@
-[{"navFile":"src/main/res/navigation/main_nav_graph.xml","javaFiles":[]}]
+[{"navFile":"src/main/res/navigation/main_nav_graph.xml","javaFiles":["com.rezyfr.dicoding.made.ui.home.HomeFragmentDirections","com.rezyfr.dicoding.made.ui.search.SearchFragmentDirections","com.rezyfr.dicoding.made.ui.detail.DetailFragmentArgs"]}]

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+        
+
+    
+
+                 
+                        
+                                                                 
+           
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorSecondaryVariant"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true" android:tag="layout/item_movie_layout_0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_poster"
+                android:tag="binding_1"                 
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_launcher_background" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_poster_alpha"
+                android:layout_width="170dp"
+                android:layout_height="150dp"
+                android:background="#802c2c2c"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_lang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:tag="binding_2"                 
+                android:textColor="@color/design_default_color_on_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="En" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:maxEms="20"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:singleLine="false"
+                android:tag="binding_3"      
+                android:textColor="@color/design_default_color_on_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/iv_poster"
+                app:layout_constraintTop_toTopOf="parent"
+                app:flow_horizontalAlign="start"
+                tools:text="Avenger Infinity War"
+                app:layout_constraintHorizontal_bias="0.0"/>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:tag="binding_4"            
+                android:textColor="@color/design_default_color_on_primary"
+                app:layout_constraintStart_toEndOf="@id/iv_poster"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                tools:text="24 October 2020" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/bg_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:tag="binding_5"                       
+                    android:textColor="@color/design_default_color_on_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="8.4" />
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+         

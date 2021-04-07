@@ -1,80 +1,23 @@
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_search_SearchFragment_GeneratedInjectorModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_search_SearchFragment_GeneratedInjectorModuleDeps
+com/rezyfr/dicoding/made/databinding/FragmentDetailBinding.java
+ com.rezyfr.dicoding.made.databinding.FragmentDetailBinding
 androidx/databinding/DataBinderMapperImpl.java
  androidx.databinding.DataBinderMapperImpl
-com/rezyfr/dicoding/made/ui/list/Hilt_MovieListFragment.java
- com.rezyfr.dicoding.made.ui.list.Hilt_MovieListFragment
-com/rezyfr/dicoding/made/ui/MainViewModel_HiltModules.java
- com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules
- com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules$BindsModule
- com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules$KeyModule
+com/rezyfr/dicoding/made/ui/home/HomeViewModel_Factory.java
+ com.rezyfr.dicoding.made.ui.home.HomeViewModel_Factory
+com/rezyfr/dicoding/made/databinding/FragmentHomeBindingImpl.java
+ com.rezyfr.dicoding.made.databinding.FragmentHomeBindingImpl
 androidx/databinding/library/baseAdapters/BR.java
  androidx.databinding.library.baseAdapters.BR
-hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_BindsModuleModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_BindsModuleModuleDeps
 com/rezyfr/dicoding/made/databinding/ActivityMainBindingImpl.java
  com.rezyfr.dicoding.made.databinding.ActivityMainBindingImpl
-com/rezyfr/dicoding/made/BR.java
- com.rezyfr.dicoding.made.BR
-com/rezyfr/dicoding/made/databinding/FragmentMovieListBindingImpl.java
- com.rezyfr.dicoding.made.databinding.FragmentMovieListBindingImpl
-com/rezyfr/dicoding/made/ui/MainActivity_GeneratedInjector.java
- com.rezyfr.dicoding.made.ui.MainActivity_GeneratedInjector
-com/rezyfr/dicoding/made/ui/Hilt_MainActivity.java
- com.rezyfr.dicoding.made.ui.Hilt_MainActivity
-hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_KeyModuleModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_KeyModuleModuleDeps
-hilt_aggregated_deps/com_rezyfr_dicoding_made_App_GeneratedInjectorModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_App_GeneratedInjectorModuleDeps
-com/rezyfr/dicoding/made/DataBinderMapperImpl.java
- com.rezyfr.dicoding.made.DataBinderMapperImpl
- com.rezyfr.dicoding.made.DataBinderMapperImpl$InnerBrLookup
- com.rezyfr.dicoding.made.DataBinderMapperImpl$InnerLayoutIdLookup
-com/rezyfr/dicoding/core/BR.java
- com.rezyfr.dicoding.core.BR
-com/rezyfr/dicoding/made/ui/MainViewModel_HiltModules_KeyModule_ProvideFactory.java
- com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules_KeyModule_ProvideFactory
- com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-com/rezyfr/dicoding/made/BuildConfig.java
- com.rezyfr.dicoding.made.BuildConfig
-com/rezyfr/dicoding/made/DataBindingTriggerClass.java
- com.rezyfr.dicoding.made.DataBindingTriggerClass
-com/rezyfr/dicoding/made/ui/list/MovieListViewModel_HiltModules_KeyModule_ProvideFactory.java
- com.rezyfr.dicoding.made.ui.list.MovieListViewModel_HiltModules_KeyModule_ProvideFactory
- com.rezyfr.dicoding.made.ui.list.MovieListViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
-com/rezyfr/dicoding/made/databinding/ItemListLayoutBindingImpl.java
- com.rezyfr.dicoding.made.databinding.ItemListLayoutBindingImpl
-com/rezyfr/dicoding/made/ui/MainViewModel_Factory.java
- com.rezyfr.dicoding.made.ui.MainViewModel_Factory
- com.rezyfr.dicoding.made.ui.MainViewModel_Factory$InstanceHolder
-hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_list_MovieListViewModel_HiltModules_BindsModuleModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_list_MovieListViewModel_HiltModules_BindsModuleModuleDeps
-com/rezyfr/dicoding/made/di/AppModule_ProvideUseCaseFactory.java
- com.rezyfr.dicoding.made.di.AppModule_ProvideUseCaseFactory
-com/rezyfr/dicoding/made/databinding/ActivityMainBinding.java
- com.rezyfr.dicoding.made.databinding.ActivityMainBinding
-hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_list_MovieListViewModel_HiltModules_KeyModuleModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_list_MovieListViewModel_HiltModules_KeyModuleModuleDeps
-com/rezyfr/dicoding/made/ui/list/MovieListFragment_GeneratedInjector.java
- com.rezyfr.dicoding.made.ui.list.MovieListFragment_GeneratedInjector
-com/rezyfr/dicoding/made/ui/list/MovieListViewModel_Factory.java
- com.rezyfr.dicoding.made.ui.list.MovieListViewModel_Factory
-hilt_aggregated_deps/com_rezyfr_dicoding_made_di_AppModuleModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_di_AppModuleModuleDeps
-hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_list_MovieListFragment_GeneratedInjectorModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_list_MovieListFragment_GeneratedInjectorModuleDeps
-com/rezyfr/dicoding/made/databinding/FragmentMovieListBinding.java
- com.rezyfr.dicoding.made.databinding.FragmentMovieListBinding
-com/rezyfr/dicoding/made/databinding/ItemListLayoutBinding.java
- com.rezyfr.dicoding.made.databinding.ItemListLayoutBinding
-hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_MainActivity_GeneratedInjectorModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_MainActivity_GeneratedInjectorModuleDeps
-com/rezyfr/dicoding/made/ui/list/MovieListViewModel_HiltModules.java
- com.rezyfr.dicoding.made.ui.list.MovieListViewModel_HiltModules
- com.rezyfr.dicoding.made.ui.list.MovieListViewModel_HiltModules$BindsModule
- com.rezyfr.dicoding.made.ui.list.MovieListViewModel_HiltModules$KeyModule
-com/rezyfr/dicoding/made/App_GeneratedInjector.java
- com.rezyfr.dicoding.made.App_GeneratedInjector
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
+com/rezyfr/dicoding/made/ui/home/HomeViewModel_HiltModules.java
+ com.rezyfr.dicoding.made.ui.home.HomeViewModel_HiltModules
+ com.rezyfr.dicoding.made.ui.home.HomeViewModel_HiltModules$BindsModule
+ com.rezyfr.dicoding.made.ui.home.HomeViewModel_HiltModules$KeyModule
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_home_HomeViewModel_HiltModules_BindsModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_home_HomeViewModel_HiltModules_BindsModuleModuleDeps
 com/rezyfr/dicoding/made/DaggerApp_HiltComponents_SingletonC.java
  com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC
  com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$1
@@ -94,6 +37,105 @@ com/rezyfr/dicoding/made/DaggerApp_HiltComponents_SingletonC.java
  com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$Builder
  com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ServiceCBuilder
  com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ServiceCImpl
+com/rezyfr/dicoding/made/ui/detail/DetailViewModel_HiltModules.java
+ com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules
+ com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules$BindsModule
+ com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules$KeyModule
+com/rezyfr/dicoding/made/ui/home/HomeFragment_GeneratedInjector.java
+ com.rezyfr.dicoding.made.ui.home.HomeFragment_GeneratedInjector
+com/rezyfr/dicoding/made/ui/detail/Hilt_DetailFragment.java
+ com.rezyfr.dicoding.made.ui.detail.Hilt_DetailFragment
+com/rezyfr/dicoding/made/ui/MainActivity_GeneratedInjector.java
+ com.rezyfr.dicoding.made.ui.MainActivity_GeneratedInjector
+com/rezyfr/dicoding/made/ui/Hilt_MainActivity.java
+ com.rezyfr.dicoding.made.ui.Hilt_MainActivity
+hilt_aggregated_deps/com_rezyfr_dicoding_made_App_GeneratedInjectorModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_App_GeneratedInjectorModuleDeps
+com/rezyfr/dicoding/made/databinding/FragmentSearchBindingImpl.java
+ com.rezyfr.dicoding.made.databinding.FragmentSearchBindingImpl
+com/rezyfr/dicoding/core/BR.java
+ com.rezyfr.dicoding.core.BR
+com/rezyfr/dicoding/made/ui/MainViewModel_HiltModules_KeyModule_ProvideFactory.java
+ com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules_KeyModule_ProvideFactory
+ com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
+com/rezyfr/dicoding/made/ui/MainViewModel_Factory.java
+ com.rezyfr.dicoding.made.ui.MainViewModel_Factory
+ com.rezyfr.dicoding.made.ui.MainViewModel_Factory$InstanceHolder
+com/rezyfr/dicoding/made/di/AppModule_ProvideUseCaseFactory.java
+ com.rezyfr.dicoding.made.di.AppModule_ProvideUseCaseFactory
+com/rezyfr/dicoding/made/ui/search/Hilt_SearchFragment.java
+ com.rezyfr.dicoding.made.ui.search.Hilt_SearchFragment
+com/rezyfr/dicoding/made/ui/search/SearchFragment_GeneratedInjector.java
+ com.rezyfr.dicoding.made.ui.search.SearchFragment_GeneratedInjector
+com/rezyfr/dicoding/made/ui/home/Hilt_HomeFragment.java
+ com.rezyfr.dicoding.made.ui.home.Hilt_HomeFragment
+hilt_aggregated_deps/com_rezyfr_dicoding_made_di_AppModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_di_AppModuleModuleDeps
+com/rezyfr/dicoding/made/databinding/ItemMovieLayoutBindingImpl.java
+ com.rezyfr.dicoding.made.databinding.ItemMovieLayoutBindingImpl
+com/rezyfr/dicoding/made/ui/search/SearchViewModel_Factory.java
+ com.rezyfr.dicoding.made.ui.search.SearchViewModel_Factory
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_MainActivity_GeneratedInjectorModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_MainActivity_GeneratedInjectorModuleDeps
+com/rezyfr/dicoding/made/ui/search/SearchViewModel_HiltModules_KeyModule_ProvideFactory.java
+ com.rezyfr.dicoding.made.ui.search.SearchViewModel_HiltModules_KeyModule_ProvideFactory
+ com.rezyfr.dicoding.made.ui.search.SearchViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_home_HomeFragment_GeneratedInjectorModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_home_HomeFragment_GeneratedInjectorModuleDeps
+com/rezyfr/dicoding/made/App_GeneratedInjector.java
+ com.rezyfr.dicoding.made.App_GeneratedInjector
+com/rezyfr/dicoding/made/BR.java
+ com.rezyfr.dicoding.made.BR
+com/rezyfr/dicoding/made/databinding/ItemMovieGridLayoutBinding.java
+ com.rezyfr.dicoding.made.databinding.ItemMovieGridLayoutBinding
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_home_HomeViewModel_HiltModules_KeyModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_home_HomeViewModel_HiltModules_KeyModuleModuleDeps
+com/rezyfr/dicoding/made/ui/MainViewModel_HiltModules.java
+ com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules
+ com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules$BindsModule
+ com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules$KeyModule
+com/rezyfr/dicoding/made/databinding/FragmentDetailBindingImpl.java
+ com.rezyfr.dicoding.made.databinding.FragmentDetailBindingImpl
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_BindsModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_BindsModuleModuleDeps
+com/rezyfr/dicoding/made/ui/detail/DetailViewModel_Factory.java
+ com.rezyfr.dicoding.made.ui.detail.DetailViewModel_Factory
+com/rezyfr/dicoding/made/ui/search/SearchViewModel_HiltModules.java
+ com.rezyfr.dicoding.made.ui.search.SearchViewModel_HiltModules
+ com.rezyfr.dicoding.made.ui.search.SearchViewModel_HiltModules$BindsModule
+ com.rezyfr.dicoding.made.ui.search.SearchViewModel_HiltModules$KeyModule
+com/rezyfr/dicoding/made/databinding/FragmentSearchBinding.java
+ com.rezyfr.dicoding.made.databinding.FragmentSearchBinding
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_search_SearchViewModel_HiltModules_BindsModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_search_SearchViewModel_HiltModules_BindsModuleModuleDeps
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_search_SearchViewModel_HiltModules_KeyModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_search_SearchViewModel_HiltModules_KeyModuleModuleDeps
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_KeyModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_KeyModuleModuleDeps
+com/rezyfr/dicoding/made/DataBinderMapperImpl.java
+ com.rezyfr.dicoding.made.DataBinderMapperImpl
+ com.rezyfr.dicoding.made.DataBinderMapperImpl$InnerBrLookup
+ com.rezyfr.dicoding.made.DataBinderMapperImpl$InnerLayoutIdLookup
+com/rezyfr/dicoding/made/BuildConfig.java
+ com.rezyfr.dicoding.made.BuildConfig
+com/rezyfr/dicoding/made/DataBindingTriggerClass.java
+ com.rezyfr.dicoding.made.DataBindingTriggerClass
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_detail_DetailViewModel_HiltModules_KeyModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_detail_DetailViewModel_HiltModules_KeyModuleModuleDeps
+com/rezyfr/dicoding/made/databinding/ItemMovieGridLayoutBindingImpl.java
+ com.rezyfr.dicoding.made.databinding.ItemMovieGridLayoutBindingImpl
+com/rezyfr/dicoding/made/databinding/ActivityMainBinding.java
+ com.rezyfr.dicoding.made.databinding.ActivityMainBinding
+com/rezyfr/dicoding/made/ui/home/HomeViewModel_HiltModules_KeyModule_ProvideFactory.java
+ com.rezyfr.dicoding.made.ui.home.HomeViewModel_HiltModules_KeyModule_ProvideFactory
+ com.rezyfr.dicoding.made.ui.home.HomeViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
+com/rezyfr/dicoding/made/ui/detail/DetailViewModel_HiltModules_KeyModule_ProvideFactory.java
+ com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules_KeyModule_ProvideFactory
+ com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_detail_DetailFragment_GeneratedInjectorModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_detail_DetailFragment_GeneratedInjectorModuleDeps
+com/rezyfr/dicoding/made/databinding/ItemMovieLayoutBinding.java
+ com.rezyfr.dicoding.made.databinding.ItemMovieLayoutBinding
 com/rezyfr/dicoding/made/App_HiltComponents.java
  com.rezyfr.dicoding.made.App_HiltComponents
  com.rezyfr.dicoding.made.App_HiltComponents$ActivityC
@@ -118,6 +160,14 @@ com/rezyfr/dicoding/made/App_HiltComponents.java
  com.rezyfr.dicoding.made.App_HiltComponents$ViewWithFragmentC
  com.rezyfr.dicoding.made.App_HiltComponents$ViewWithFragmentC$Builder
  com.rezyfr.dicoding.made.App_HiltComponents$ViewWithFragmentCBuilderModule
+com/rezyfr/dicoding/made/databinding/FragmentHomeBinding.java
+ com.rezyfr.dicoding.made.databinding.FragmentHomeBinding
 com/rezyfr/dicoding/made/Hilt_App.java
  com.rezyfr.dicoding.made.Hilt_App
  com.rezyfr.dicoding.made.Hilt_App$1
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_detail_DetailViewModel_HiltModules_BindsModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_detail_DetailViewModel_HiltModules_BindsModuleModuleDeps
+com/rezyfr/dicoding/made/ui/detail/DetailFragment_GeneratedInjector.java
+ com.rezyfr.dicoding.made.ui.detail.DetailFragment_GeneratedInjector
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent

@@ -19,8 +19,8 @@ android {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    implementation Dependencies.roomRuntime
-    implementation Dependencies.roomKtx
+    api Dependencies.roomRuntime
+    api Dependencies.roomKtx
     kapt Dependencies.roomCompiler
 
     // Retrofit

@@ -1,13 +1,18 @@
 package com.rezyfr.dicoding.made;
 
 import androidx.hilt.lifecycle.ViewModelFactoryModules;
+import com.rezyfr.dicoding.core.di.DatabaseModule;
 import com.rezyfr.dicoding.core.di.NetworkModule;
 import com.rezyfr.dicoding.core.di.RepositoryModule;
 import com.rezyfr.dicoding.made.di.AppModule;
 import com.rezyfr.dicoding.made.ui.MainActivity_GeneratedInjector;
 import com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules;
-import com.rezyfr.dicoding.made.ui.list.MovieListFragment_GeneratedInjector;
-import com.rezyfr.dicoding.made.ui.list.MovieListViewModel_HiltModules;
+import com.rezyfr.dicoding.made.ui.detail.DetailFragment_GeneratedInjector;
+import com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules;
+import com.rezyfr.dicoding.made.ui.home.HomeFragment_GeneratedInjector;
+import com.rezyfr.dicoding.made.ui.home.HomeViewModel_HiltModules;
+import com.rezyfr.dicoding.made.ui.search.SearchFragment_GeneratedInjector;
+import com.rezyfr.dicoding.made.ui.search.SearchViewModel_HiltModules;
 import dagger.Binds;
 import dagger.Component;
 import dagger.Module;
@@ -132,6 +137,7 @@ public final class App_HiltComponents {
           ActivityRetainedCBuilderModule.class,
           ServiceCBuilderModule.class,
           ApplicationContextModule.class,
+          DatabaseModule.class,
           NetworkModule.class
       }
   )
@@ -156,9 +162,11 @@ public final class App_HiltComponents {
       modules = {
           ActivityCBuilderModule.class,
           ViewModelCBuilderModule.class,
+          DetailViewModel_HiltModules.KeyModule.class,
           HiltWrapper_ActivityRetainedComponentManager_LifecycleModule.class,
+          HomeViewModel_HiltModules.KeyModule.class,
           MainViewModel_HiltModules.KeyModule.class,
-          MovieListViewModel_HiltModules.KeyModule.class
+          SearchViewModel_HiltModules.KeyModule.class
       }
   )
   @ActivityRetainedScoped
@@ -195,9 +203,11 @@ public final class App_HiltComponents {
 
   @Subcomponent(
       modules = {
+          DetailViewModel_HiltModules.BindsModule.class,
           HiltWrapper_HiltViewModelFactory_ViewModelModule.class,
+          HomeViewModel_HiltModules.BindsModule.class,
           MainViewModel_HiltModules.BindsModule.class,
-          MovieListViewModel_HiltModules.BindsModule.class
+          SearchViewModel_HiltModules.BindsModule.class
       }
   )
   @ViewModelScoped
@@ -225,7 +235,9 @@ public final class App_HiltComponents {
       }
   )
   @FragmentScoped
-  public abstract static class FragmentC implements MovieListFragment_GeneratedInjector,
+  public abstract static class FragmentC implements DetailFragment_GeneratedInjector,
+      HomeFragment_GeneratedInjector,
+      SearchFragment_GeneratedInjector,
       FragmentComponent,
       DefaultViewModelFactories.FragmentEntryPoint,
       ViewComponentManager.ViewWithFragmentComponentBuilderEntryPoint,

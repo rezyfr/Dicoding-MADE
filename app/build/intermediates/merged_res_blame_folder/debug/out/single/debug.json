@@ -4,10 +4,6 @@
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
-    },
-    {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
     },
@@ -16,12 +12,48 @@
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_fragment_movie_list.xml.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_movie_list.xml"
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_back.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_back.xml"
     },
     {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/menu_menu_home.xml.flat",
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/menu/menu_home.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_fragment_home.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_favorite_outlined.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_favorite_outlined.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_search.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_search.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_settings.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_fragment_detail.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_detail.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_bg_circle.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/bg_circle.xml"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_favorite_filled.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_favorite_filled.xml"
     },
     {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher_round.png.flat",
@@ -32,12 +64,12 @@
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_item_movie_layout.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/item_movie_layout.xml"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_search.xml.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_search.xml"
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_cover_backdrop.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/cover_backdrop.xml"
     },
     {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
@@ -52,6 +84,10 @@
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_item_movie_grid_layout.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/item_movie_grid_layout.xml"
+    },
+    {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/generated/res/pngs/debug/drawable-anydpi-v24/ic_launcher_foreground.xml"
     },
@@ -64,20 +100,16 @@
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/navigation/main_nav_graph.xml"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_settings.xml.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_settings.xml"
-    },
-    {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_item_list_layout.xml.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/item_list_layout.xml"
-    },
-    {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_fragment_search.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_search.xml"
     },
     {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",

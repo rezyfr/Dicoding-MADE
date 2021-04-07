@@ -12,9 +12,15 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import com.rezyfr.dicoding.core.data.source.remote.MoviePagingDataSource;
+import com.rezyfr.dicoding.core.data.source.local.LocalDataSource;
+import com.rezyfr.dicoding.core.data.source.local.room.AppDatabase;
+import com.rezyfr.dicoding.core.data.source.local.room.MovieDao;
+import com.rezyfr.dicoding.core.data.source.remote.RemoteDataSource;
 import com.rezyfr.dicoding.core.data.source.remote.network.TmdbService;
 import com.rezyfr.dicoding.core.data.source.repository.MovieRepository;
+import com.rezyfr.dicoding.core.di.DatabaseModule;
+import com.rezyfr.dicoding.core.di.DatabaseModule_ProvideAppDatabaseFactory;
+import com.rezyfr.dicoding.core.di.DatabaseModule_ProvideMovieDaoFactory;
 import com.rezyfr.dicoding.core.di.NetworkModule;
 import com.rezyfr.dicoding.core.di.NetworkModule_ProvideApiServiceFactory;
 import com.rezyfr.dicoding.core.di.NetworkModule_ProvideHeaderInterceptorFactory;
@@ -25,9 +31,15 @@ import com.rezyfr.dicoding.made.di.AppModule_ProvideUseCaseFactory;
 import com.rezyfr.dicoding.made.ui.MainActivity;
 import com.rezyfr.dicoding.made.ui.MainViewModel;
 import com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules_KeyModule_ProvideFactory;
-import com.rezyfr.dicoding.made.ui.list.MovieListFragment;
-import com.rezyfr.dicoding.made.ui.list.MovieListViewModel;
-import com.rezyfr.dicoding.made.ui.list.MovieListViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.rezyfr.dicoding.made.ui.detail.DetailFragment;
+import com.rezyfr.dicoding.made.ui.detail.DetailViewModel;
+import com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.rezyfr.dicoding.made.ui.home.HomeFragment;
+import com.rezyfr.dicoding.made.ui.home.HomeViewModel;
+import com.rezyfr.dicoding.made.ui.home.HomeViewModel_HiltModules_KeyModule_ProvideFactory;
+import com.rezyfr.dicoding.made.ui.search.SearchFragment;
+import com.rezyfr.dicoding.made.ui.search.SearchViewModel;
+import com.rezyfr.dicoding.made.ui.search.SearchViewModel_HiltModules_KeyModule_ProvideFactory;
 import dagger.hilt.android.ActivityRetainedLifecycle;
 import dagger.hilt.android.internal.builders.ActivityComponentBuilder;
 import dagger.hilt.android.internal.builders.ActivityRetainedComponentBuilder;
@@ -40,6 +52,7 @@ import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories_Internal
 import dagger.hilt.android.internal.managers.ActivityRetainedComponentManager_Lifecycle_Factory;
 import dagger.hilt.android.internal.modules.ApplicationContextModule;
 import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideApplicationFactory;
+import dagger.hilt.android.internal.modules.ApplicationContextModule_ProvideContextFactory;
 import dagger.internal.DoubleCheck;
 import dagger.internal.MemoizedSentinel;
 import dagger.internal.Preconditions;
@@ -60,7 +73,13 @@ import okhttp3.OkHttpClient;
 public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponents.SingletonC {
   private final ApplicationContextModule applicationContextModule;
 
-  private volatile Object moviePagingDataSource = new MemoizedSentinel();
+  private volatile Object remoteDataSource = new MemoizedSentinel();
+
+  private volatile Object appDatabase = new MemoizedSentinel();
+
+  private volatile Object movieDao = new MemoizedSentinel();
+
+  private volatile Object localDataSource = new MemoizedSentinel();
 
   private volatile Object movieRepository = new MemoizedSentinel();
 
@@ -81,18 +100,60 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
     return NetworkModule_ProvideApiServiceFactory.provideApiService(okHttpClient());
   }
 
-  private MoviePagingDataSource moviePagingDataSource() {
-    Object local = moviePagingDataSource;
+  private RemoteDataSource remoteDataSource() {
+    Object local = remoteDataSource;
     if (local instanceof MemoizedSentinel) {
       synchronized (local) {
-        local = moviePagingDataSource;
+        local = remoteDataSource;
         if (local instanceof MemoizedSentinel) {
-          local = new MoviePagingDataSource(tmdbService());
-          moviePagingDataSource = DoubleCheck.reentrantCheck(moviePagingDataSource, local);
+          local = new RemoteDataSource(tmdbService());
+          remoteDataSource = DoubleCheck.reentrantCheck(remoteDataSource, local);
         }
       }
     }
-    return (MoviePagingDataSource) local;
+    return (RemoteDataSource) local;
+  }
+
+  private AppDatabase appDatabase() {
+    Object local = appDatabase;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = appDatabase;
+        if (local instanceof MemoizedSentinel) {
+          local = DatabaseModule_ProvideAppDatabaseFactory.provideAppDatabase(ApplicationContextModule_ProvideContextFactory.provideContext(applicationContextModule));
+          appDatabase = DoubleCheck.reentrantCheck(appDatabase, local);
+        }
+      }
+    }
+    return (AppDatabase) local;
+  }
+
+  private MovieDao movieDao() {
+    Object local = movieDao;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = movieDao;
+        if (local instanceof MemoizedSentinel) {
+          local = DatabaseModule_ProvideMovieDaoFactory.provideMovieDao(appDatabase());
+          movieDao = DoubleCheck.reentrantCheck(movieDao, local);
+        }
+      }
+    }
+    return (MovieDao) local;
+  }
+
+  private LocalDataSource localDataSource() {
+    Object local = localDataSource;
+    if (local instanceof MemoizedSentinel) {
+      synchronized (local) {
+        local = localDataSource;
+        if (local instanceof MemoizedSentinel) {
+          local = new LocalDataSource(movieDao());
+          localDataSource = DoubleCheck.reentrantCheck(localDataSource, local);
+        }
+      }
+    }
+    return (LocalDataSource) local;
   }
 
   private MovieRepository movieRepository() {
@@ -101,7 +162,7 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
       synchronized (local) {
         local = movieRepository;
         if (local instanceof MemoizedSentinel) {
-          local = new MovieRepository(moviePagingDataSource());
+          local = new MovieRepository(remoteDataSource(), localDataSource());
           movieRepository = DoubleCheck.reentrantCheck(movieRepository, local);
         }
       }
@@ -144,6 +205,15 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
 
     public Builder applicationContextModule(ApplicationContextModule applicationContextModule) {
       this.applicationContextModule = Preconditions.checkNotNull(applicationContextModule);
+      return this;
+    }
+
+    /**
+     * @deprecated This module is declared, but an instance is not used in the component. This method is a no-op. For more, see https://dagger.dev/unused-modules.
+     */
+    @Deprecated
+    public Builder databaseModule(DatabaseModule databaseModule) {
+      Preconditions.checkNotNull(databaseModule);
       return this;
     }
 
@@ -224,7 +294,7 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
       }
 
       private Set<String> keySetSetOfString() {
-        return ImmutableSet.<String>of(MainViewModel_HiltModules_KeyModule_ProvideFactory.provide(), MovieListViewModel_HiltModules_KeyModule_ProvideFactory.provide());
+        return ImmutableSet.<String>of(DetailViewModel_HiltModules_KeyModule_ProvideFactory.provide(), HomeViewModel_HiltModules_KeyModule_ProvideFactory.provide(), MainViewModel_HiltModules_KeyModule_ProvideFactory.provide(), SearchViewModel_HiltModules_KeyModule_ProvideFactory.provide());
       }
 
       private ViewModelProvider.Factory provideFactory() {
@@ -237,7 +307,7 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
       }
 
       @Override
-      public void injectMainActivity(MainActivity arg0) {
+      public void injectMainActivity(MainActivity mainActivity) {
       }
 
       @Override
@@ -288,7 +358,15 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
         }
 
         @Override
-        public void injectMovieListFragment(MovieListFragment arg0) {
+        public void injectDetailFragment(DetailFragment detailFragment) {
+        }
+
+        @Override
+        public void injectHomeFragment(HomeFragment homeFragment) {
+        }
+
+        @Override
+        public void injectSearchFragment(SearchFragment searchFragment) {
         }
 
         @Override
@@ -364,39 +442,69 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
     }
 
     private final class ViewModelCImpl extends App_HiltComponents.ViewModelC {
+      private volatile Provider<DetailViewModel> detailViewModelProvider;
+
+      private volatile Provider<HomeViewModel> homeViewModelProvider;
+
       private volatile Provider<MainViewModel> mainViewModelProvider;
 
-      private volatile Provider<MovieListViewModel> movieListViewModelProvider;
+      private volatile Provider<SearchViewModel> searchViewModelProvider;
 
       private ViewModelCImpl(SavedStateHandle savedStateHandle) {
 
       }
 
+      private DetailViewModel detailViewModel() {
+        return new DetailViewModel(DaggerApp_HiltComponents_SingletonC.this.movieUseCase());
+      }
+
+      private Provider<DetailViewModel> detailViewModelProvider() {
+        Object local = detailViewModelProvider;
+        if (local == null) {
+          local = new SwitchingProvider<>(0);
+          detailViewModelProvider = (Provider<DetailViewModel>) local;
+        }
+        return (Provider<DetailViewModel>) local;
+      }
+
+      private HomeViewModel homeViewModel() {
+        return new HomeViewModel(DaggerApp_HiltComponents_SingletonC.this.movieUseCase());
+      }
+
+      private Provider<HomeViewModel> homeViewModelProvider() {
+        Object local = homeViewModelProvider;
+        if (local == null) {
+          local = new SwitchingProvider<>(1);
+          homeViewModelProvider = (Provider<HomeViewModel>) local;
+        }
+        return (Provider<HomeViewModel>) local;
+      }
+
       private Provider<MainViewModel> mainViewModelProvider() {
         Object local = mainViewModelProvider;
         if (local == null) {
-          local = new SwitchingProvider<>(0);
+          local = new SwitchingProvider<>(2);
           mainViewModelProvider = (Provider<MainViewModel>) local;
         }
         return (Provider<MainViewModel>) local;
       }
 
-      private MovieListViewModel movieListViewModel() {
-        return new MovieListViewModel(DaggerApp_HiltComponents_SingletonC.this.movieUseCase());
+      private SearchViewModel searchViewModel() {
+        return new SearchViewModel(DaggerApp_HiltComponents_SingletonC.this.movieUseCase());
       }
 
-      private Provider<MovieListViewModel> movieListViewModelProvider() {
-        Object local = movieListViewModelProvider;
+      private Provider<SearchViewModel> searchViewModelProvider() {
+        Object local = searchViewModelProvider;
         if (local == null) {
-          local = new SwitchingProvider<>(1);
-          movieListViewModelProvider = (Provider<MovieListViewModel>) local;
+          local = new SwitchingProvider<>(3);
+          searchViewModelProvider = (Provider<SearchViewModel>) local;
         }
-        return (Provider<MovieListViewModel>) local;
+        return (Provider<SearchViewModel>) local;
       }
 
       @Override
       public Map<String, Provider<ViewModel>> getHiltViewModelMap() {
-        return ImmutableMap.<String, Provider<ViewModel>>of("com.rezyfr.dicoding.made.ui.MainViewModel", (Provider) mainViewModelProvider(), "com.rezyfr.dicoding.made.ui.list.MovieListViewModel", (Provider) movieListViewModelProvider());
+        return ImmutableMap.<String, Provider<ViewModel>>of("com.rezyfr.dicoding.made.ui.detail.DetailViewModel", (Provider) detailViewModelProvider(), "com.rezyfr.dicoding.made.ui.home.HomeViewModel", (Provider) homeViewModelProvider(), "com.rezyfr.dicoding.made.ui.MainViewModel", (Provider) mainViewModelProvider(), "com.rezyfr.dicoding.made.ui.search.SearchViewModel", (Provider) searchViewModelProvider());
       }
 
       private final class SwitchingProvider<T> implements Provider<T> {
@@ -410,11 +518,17 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
         @Override
         public T get() {
           switch (id) {
-            case 0: // com.rezyfr.dicoding.made.ui.MainViewModel 
+            case 0: // com.rezyfr.dicoding.made.ui.detail.DetailViewModel 
+            return (T) ViewModelCImpl.this.detailViewModel();
+
+            case 1: // com.rezyfr.dicoding.made.ui.home.HomeViewModel 
+            return (T) ViewModelCImpl.this.homeViewModel();
+
+            case 2: // com.rezyfr.dicoding.made.ui.MainViewModel 
             return (T) new MainViewModel();
 
-            case 1: // com.rezyfr.dicoding.made.ui.list.MovieListViewModel 
-            return (T) ViewModelCImpl.this.movieListViewModel();
+            case 3: // com.rezyfr.dicoding.made.ui.search.SearchViewModel 
+            return (T) ViewModelCImpl.this.searchViewModel();
 
             default: throw new AssertionError(id);
           }

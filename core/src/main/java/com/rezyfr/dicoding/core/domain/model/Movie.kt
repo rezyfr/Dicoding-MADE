@@ -1,7 +1,10 @@
 package com.rezyfr.dicoding.core.domain.model
 
+import android.os.Parcelable
 import com.rezyfr.dicoding.core.BuildConfig
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Movie(
     val overview: String? = null,
     val originalLanguage: String? = null,
@@ -17,8 +20,11 @@ data class Movie(
     val id: Int? = null,
     val adult: Boolean? = null,
     val voteCount: Int? = null
-){
+) : Parcelable {
 
-    fun getFullPosterPath() =
+    fun getPosterImage() =
         if (posterPath.isNullOrBlank()) null else BuildConfig.IMAGE_URL + posterPath
+
+    fun getBackdropImage() =
+        if (backdropPath.isNullOrBlank()) null else BuildConfig.BACKDROP_URL + backdropPath
 }

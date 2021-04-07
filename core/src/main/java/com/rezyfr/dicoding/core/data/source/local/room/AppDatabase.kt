@@ -1,9 +1,12 @@
 package com.rezyfr.dicoding.core.data.source.local.room
 
 import android.content.Context
+import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.rezyfr.dicoding.core.data.source.local.entity.MovieEntity
 
+@Database(version = 1, exportSchema = false, entities = [MovieEntity::class])
 abstract class AppDatabase: RoomDatabase() {
     companion object {
         @Volatile
@@ -23,5 +26,5 @@ abstract class AppDatabase: RoomDatabase() {
             ).build()
     }
 
-    abstract fun favoriteDao(): FavoriteDao
+    abstract fun movieDao(): MovieDao
 }
