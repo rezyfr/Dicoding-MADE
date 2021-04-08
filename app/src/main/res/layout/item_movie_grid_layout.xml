@@ -2,6 +2,7 @@
 <layout>
 
     <data>
+
         <variable
             name="movie"
             type="com.rezyfr.dicoding.core.domain.model.Movie" />

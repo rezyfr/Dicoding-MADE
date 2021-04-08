@@ -44,12 +44,12 @@
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_detail.xml"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_popcorn.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_popcorn.xml"
     },
     {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_bg_circle.xml.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/bg_circle.xml"
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
     },
     {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_favorite_filled.xml.flat",
@@ -62,10 +62,6 @@
     {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
-    },
-    {
-        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_item_movie_layout.xml.flat",
-        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/item_movie_layout.xml"
     },
     {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_cover_backdrop.xml.flat",

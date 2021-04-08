@@ -11,7 +11,6 @@ import com.rezyfr.dicoding.made.databinding.FragmentDetailBindingImpl;
 import com.rezyfr.dicoding.made.databinding.FragmentHomeBindingImpl;
 import com.rezyfr.dicoding.made.databinding.FragmentSearchBindingImpl;
 import com.rezyfr.dicoding.made.databinding.ItemMovieGridLayoutBindingImpl;
-import com.rezyfr.dicoding.made.databinding.ItemMovieLayoutBindingImpl;
 import java.lang.IllegalArgumentException;
 import java.lang.Integer;
 import java.lang.Object;
@@ -35,9 +34,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
 
   private static final int LAYOUT_ITEMMOVIEGRIDLAYOUT = 5;
 
-  private static final int LAYOUT_ITEMMOVIELAYOUT = 6;
-
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(6);
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(5);
 
   static {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.rezyfr.dicoding.made.R.layout.activity_main, LAYOUT_ACTIVITYMAIN);
@@ -45,7 +42,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.rezyfr.dicoding.made.R.layout.fragment_home, LAYOUT_FRAGMENTHOME);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.rezyfr.dicoding.made.R.layout.fragment_search, LAYOUT_FRAGMENTSEARCH);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.rezyfr.dicoding.made.R.layout.item_movie_grid_layout, LAYOUT_ITEMMOVIEGRIDLAYOUT);
-    INTERNAL_LAYOUT_ID_LOOKUP.put(com.rezyfr.dicoding.made.R.layout.item_movie_layout, LAYOUT_ITEMMOVIELAYOUT);
   }
 
   @Override
@@ -86,12 +82,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
             return new ItemMovieGridLayoutBindingImpl(component, view);
           }
           throw new IllegalArgumentException("The tag for item_movie_grid_layout is invalid. Received: " + tag);
-        }
-        case  LAYOUT_ITEMMOVIELAYOUT: {
-          if ("layout/item_movie_layout_0".equals(tag)) {
-            return new ItemMovieLayoutBindingImpl(component, view);
-          }
-          throw new IllegalArgumentException("The tag for item_movie_layout is invalid. Received: " + tag);
         }
       }
     }
@@ -148,7 +138,7 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(6);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(5);
 
     static {
       sKeys.put("layout/activity_main_0", com.rezyfr.dicoding.made.R.layout.activity_main);
@@ -156,7 +146,6 @@ public class DataBinderMapperImpl extends DataBinderMapper {
       sKeys.put("layout/fragment_home_0", com.rezyfr.dicoding.made.R.layout.fragment_home);
       sKeys.put("layout/fragment_search_0", com.rezyfr.dicoding.made.R.layout.fragment_search);
       sKeys.put("layout/item_movie_grid_layout_0", com.rezyfr.dicoding.made.R.layout.item_movie_grid_layout);
-      sKeys.put("layout/item_movie_layout_0", com.rezyfr.dicoding.made.R.layout.item_movie_layout);
     }
   }
 }

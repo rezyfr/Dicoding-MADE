@@ -15,7 +15,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 @ExperimentalCoroutinesApi
 @FlowPreview
@@ -24,9 +23,27 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
 
     override val viewModel: SearchViewModel by viewModels()
     override fun layoutRes(): Int = R.layout.fragment_search
-    private lateinit var searchAdapter: SearchAdapter
+    private lateinit var searchPagingAdapter: SearchPagingAdapter
 
     override fun observeData() {
+        viewModel.searchResult.observe(viewLifecycleOwner, {
+            lifecycleScope.launch {
+                if(it.toString().isNotEmpty()) {
+                    searchPagingAdapter.submitData(it)
+                    binding.rvSearch.visibility = View.VISIBLE
+                    binding.containerNoResult.visibility = View.GONE
+                }
+            }
+        })
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setAdapter()
+        binding.svMovie.isFocusable = true
+        binding.svMovie.isIconified = false
+        binding.svMovie.requestFocusFromTouch()
+
         binding.svMovie.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return true
@@ -37,31 +54,16 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
                 return true
             }
         })
-        viewModel.searchResult.observe(viewLifecycleOwner, {
-            lifecycleScope.launch {
-                Timber.d("MovieSearch: $it")
-                val data = it
-                searchAdapter.submitData(data)
-            }
-        })
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.svMovie.isFocusable = true
-        binding.svMovie.isIconified = false
-        binding.svMovie.requestFocusFromTouch()
-        setAdapter()
     }
 
     private fun setAdapter() {
-        searchAdapter = SearchAdapter()
-        searchAdapter.onItemClick = {
+        searchPagingAdapter = SearchPagingAdapter()
+        searchPagingAdapter.onItemClick = {
             toMovieDetail(it)
         }
-        binding.rvSearch.adapter = searchAdapter
+        binding.rvSearch.adapter = searchPagingAdapter
 
-        searchAdapter.addLoadStateListener { loadState ->
+        searchPagingAdapter.addLoadStateListener { loadState ->
             if (loadState.refresh is LoadState.Loading ||
                 loadState.append is LoadState.Loading
             )

@@ -29,7 +29,7 @@ abstract class BaseActivity<VM : BaseViewModel, T : ViewDataBinding> : AppCompat
         observeErrorEvent()
     }
 
-    protected fun observeErrorEvent() {
+    private fun observeErrorEvent() {
         viewModel.apply {
             isLoading.observe(this@BaseActivity) {
                 handleLoading(it)
@@ -54,15 +54,15 @@ abstract class BaseActivity<VM : BaseViewModel, T : ViewDataBinding> : AppCompat
         if (isLoading) showLoading() else hideLoading()
     }
 
-    fun showLoading() {
+    private fun showLoading() {
         showLoadingDialog()
     }
 
-    fun hideLoading() {
+    private fun hideLoading() {
         hideLoadingDialog()
     }
 
-    fun handleErrorMessage(message: String?) {
+    private fun handleErrorMessage(message: String?) {
         if (message.isNullOrBlank()) return
         hideLoading()
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()

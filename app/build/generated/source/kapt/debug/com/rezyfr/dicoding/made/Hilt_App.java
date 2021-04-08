@@ -1,7 +1,7 @@
 package com.rezyfr.dicoding.made;
 
-import android.app.Application;
 import androidx.annotation.CallSuper;
+import com.google.android.play.core.splitcompat.SplitCompatApplication;
 import dagger.hilt.android.internal.managers.ApplicationComponentManager;
 import dagger.hilt.android.internal.managers.ComponentSupplier;
 import dagger.hilt.android.internal.modules.ApplicationContextModule;
@@ -15,7 +15,7 @@ import javax.annotation.Generated;
  * A generated base class to be extended by the @dagger.hilt.android.HiltAndroidApp annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
  */
 @Generated("dagger.hilt.android.processor.internal.androidentrypoint.ApplicationGenerator")
-public abstract class Hilt_App extends Application implements GeneratedComponentManagerHolder {
+public abstract class Hilt_App extends SplitCompatApplication implements GeneratedComponentManagerHolder {
   private final ApplicationComponentManager componentManager = new ApplicationComponentManager(new ComponentSupplier() {
     @Override
     public Object get() {

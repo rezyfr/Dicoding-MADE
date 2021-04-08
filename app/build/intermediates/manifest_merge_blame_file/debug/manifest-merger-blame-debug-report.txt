@@ -11,63 +11,146 @@
 9-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:5:5-66
+11-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:5:5-67
 11-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:5:22-64
 12
-13    <application
-13-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:7:5-22:19
-14        android:name="com.rezyfr.dicoding.made.App"
-14-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:8:9-28
-15        android:allowBackup="true"
-15-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:9:9-35
-16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.3.2] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/54044a2fb295559ecc0e5b2b6eae1610/core-1.3.2/AndroidManifest.xml:24:18-86
-17        android:debuggable="true"
-18        android:icon="@mipmap/ic_launcher"
-18-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:10:9-43
-19        android:label="@string/app_name"
-19-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:11:9-41
-20        android:roundIcon="@mipmap/ic_launcher_round"
-20-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:12:9-54
-21        android:supportsRtl="true"
-21-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:13:9-35
-22        android:testOnly="true"
-23        android:theme="@style/Theme.MADESubmission1" >
-23-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:14:9-53
-24        <activity android:name="com.rezyfr.dicoding.made.ui.MainActivity" >
-24-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:15:9-21:20
-24-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:15:19-50
-25            <intent-filter>
-25-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:16:13-20:29
-26                <action android:name="android.intent.action.MAIN" />
-26-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:17:17-69
-26-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:17:25-66
-27
-28                <category android:name="android.intent.category.LAUNCHER" />
-28-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:19:17-77
-28-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:19:27-74
-29            </intent-filter>
-30        </activity>
+13    <!-- Permission will be merged into the manifest of the hosting app. -->
+14    <!-- Is required to launch foreground extraction service for targetSdkVersion 28+. -->
+15    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+15-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:8:3-74
+15-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:8:20-72
+16
+17    <application
+17-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:7:5-22:19
+18        android:name="com.rezyfr.dicoding.made.App"
+18-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:8:9-28
+19        android:allowBackup="true"
+19-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:9:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.3.2] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/77f8f0da0ab8c85eea5126f50e2815a6/core-1.3.2/AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+21-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:22:9-34
+22        android:icon="@mipmap/ic_launcher"
+22-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:10:9-43
+23        android:label="@string/app_name"
+23-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:11:9-41
+24        android:roundIcon="@mipmap/ic_launcher_round"
+24-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:12:9-54
+25        android:supportsRtl="true"
+25-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:13:9-35
+26        android:testOnly="true"
+26-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:23:9-32
+27        android:theme="@style/Theme.MADESubmission1" >
+27-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:14:9-53
+28        <activity android:name="com.rezyfr.dicoding.made.ui.MainActivity" >
+28-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:15:9-21:20
+28-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:15:19-50
+29            <intent-filter>
+29-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:16:13-20:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:17:17-69
+30-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:17:25-66
 31
-32        <provider
-32-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/0d259eb2182318f6f5b2c273e3824a62/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
-33            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-33-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/0d259eb2182318f6f5b2c273e3824a62/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
-34            android:authorities="com.rezyfr.made.lifecycle-process"
-34-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/0d259eb2182318f6f5b2c273e3824a62/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
-35            android:exported="false"
-35-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/0d259eb2182318f6f5b2c273e3824a62/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
-36            android:multiprocess="true" />
-36-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/0d259eb2182318f6f5b2c273e3824a62/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
-37
-38        <service
-38-->[androidx.room:room-runtime:2.2.6] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/572a2e123875fbc7cb59d4be0cc480b4/room-runtime-2.2.6/AndroidManifest.xml:25:9-28:40
-39            android:name="androidx.room.MultiInstanceInvalidationService"
-39-->[androidx.room:room-runtime:2.2.6] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/572a2e123875fbc7cb59d4be0cc480b4/room-runtime-2.2.6/AndroidManifest.xml:26:13-74
-40            android:directBootAware="true"
-40-->[androidx.room:room-runtime:2.2.6] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/572a2e123875fbc7cb59d4be0cc480b4/room-runtime-2.2.6/AndroidManifest.xml:27:13-43
-41            android:exported="false" />
-41-->[androidx.room:room-runtime:2.2.6] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/572a2e123875fbc7cb59d4be0cc480b4/room-runtime-2.2.6/AndroidManifest.xml:28:13-37
-42    </application>
-43
-44</manifest>
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:19:17-77
+32-->/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/AndroidManifest.xml:19:27-74
+33            </intent-filter>
+34        </activity>
+35        <!-- The activities will be merged into the manifest of the hosting app. -->
+36        <activity
+36-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:12:5-271
+37            android:name="com.google.android.play.core.missingsplits.PlayCoreMissingSplitsActivity"
+37-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:12:15-102
+38            android:enabled="false"
+38-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:12:103-126
+39            android:exported="false"
+39-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:12:127-151
+40            android:launchMode="singleInstance"
+40-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:12:204-239
+41            android:process=":playcore_missing_splits_activity"
+41-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:12:152-203
+42            android:stateNotNeeded="true" />
+42-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:12:240-269
+43        <activity
+43-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:13:5-226
+44            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+44-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:13:15-95
+45            android:enabled="false"
+45-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:13:96-119
+46            android:exported="false"
+46-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:13:120-144
+47            android:stateNotNeeded="true"
+47-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:13:145-174
+48            android:theme="@style/Theme.PlayCore.Transparent" /> <!-- The services will be merged into the manifest of the hosting app. -->
+48-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:13:175-224
+49        <service
+49-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:16:5-18:15
+50            android:name="com.google.android.play.core.assetpacks.AssetPackExtractionService"
+50-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:16:14-95
+51            android:enabled="false"
+51-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:16:96-119
+52            android:exported="true" >
+52-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:16:120-143
+53            <meta-data
+53-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:17:7-108
+54                android:name="com.google.android.play.core.assetpacks.versionCode"
+54-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:17:18-84
+55                android:value="11000" />
+55-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:17:85-106
+56        </service>
+57        <service
+57-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:19:5-147
+58            android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"
+58-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:19:14-96
+59            android:enabled="false"
+59-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:19:97-120
+60            android:exported="false" />
+60-->[com.google.android.play:core:1.10.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/3897f3da34dcfdb016bc1ce32309aa85/jetified-core-1.10.0/AndroidManifest.xml:19:121-145
+61
+62        <provider
+62-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/ce7aabc5ec2328ea84300683ca5454c8/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+63            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+63-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/ce7aabc5ec2328ea84300683ca5454c8/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+64            android:authorities="com.rezyfr.made.lifecycle-process"
+64-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/ce7aabc5ec2328ea84300683ca5454c8/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+65            android:exported="false"
+65-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/ce7aabc5ec2328ea84300683ca5454c8/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+66            android:multiprocess="true" />
+66-->[androidx.lifecycle:lifecycle-process:2.0.0] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/ce7aabc5ec2328ea84300683ca5454c8/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+67
+68        <service
+68-->[androidx.room:room-runtime:2.2.6] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/eebeae426eeb20dba7f4fae1bb52eb2f/room-runtime-2.2.6/AndroidManifest.xml:25:9-28:40
+69            android:name="androidx.room.MultiInstanceInvalidationService"
+69-->[androidx.room:room-runtime:2.2.6] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/eebeae426eeb20dba7f4fae1bb52eb2f/room-runtime-2.2.6/AndroidManifest.xml:26:13-74
+70            android:directBootAware="true"
+70-->[androidx.room:room-runtime:2.2.6] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/eebeae426eeb20dba7f4fae1bb52eb2f/room-runtime-2.2.6/AndroidManifest.xml:27:13-43
+71            android:exported="false" />
+71-->[androidx.room:room-runtime:2.2.6] /home/rezyfr/.gradle/caches/transforms-2/files-2.1/eebeae426eeb20dba7f4fae1bb52eb2f/room-runtime-2.2.6/AndroidManifest.xml:28:13-37
+72
+73        <activity
+73-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:24:9-36:20
+74            android:name="com.rezyfr.dicoding.favmovie.FavoriteActivity"
+74-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:25:13-73
+75            android:splitName="favmovie" >
+75-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:26:13-41
+76            <intent-filter>
+76-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:27:13-35:29
+77                <action android:name="android.intent.action.VIEW" />
+77-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:28:17-69
+77-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:28:25-66
+78
+79                <category android:name="android.intent.category.DEFAULT" />
+79-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:30:17-76
+79-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:30:27-73
+80
+81                <data
+81-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:32:17-34:51
+82                    android:host="favorite"
+82-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:33:21-44
+83                    android:scheme="submission" />
+83-->[:favmovie] /home/rezyfr/AndroidStudioProjects/MADESubmission1/favmovie/build/intermediates/metadata_feature_manifest/debug/AndroidManifest.xml:34:21-48
+84            </intent-filter>
+85        </activity>
+86    </application>
+87
+88</manifest>

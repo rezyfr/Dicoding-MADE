@@ -1,3 +1,4 @@
+include ':favmovie'
 include ':core'
 include ':app'
 rootProject.name = "MADE-Submission1"

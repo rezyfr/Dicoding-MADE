@@ -170,12 +170,13 @@ public final class DaggerApp_HiltComponents_SingletonC extends App_HiltComponent
     return (MovieRepository) local;
   }
 
-  private MovieUseCase movieUseCase() {
-    return AppModule_ProvideUseCaseFactory.provideUseCase(movieRepository());
+  @Override
+  public void injectApp(App app) {
   }
 
   @Override
-  public void injectApp(App app) {
+  public MovieUseCase movieUseCase() {
+    return AppModule_ProvideUseCaseFactory.provideUseCase(movieRepository());
   }
 
   @Override

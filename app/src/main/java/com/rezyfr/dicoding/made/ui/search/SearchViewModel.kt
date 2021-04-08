@@ -14,7 +14,8 @@ import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 @HiltViewModel
-class SearchViewModel @Inject constructor(private val movieUseCase: MovieUseCase) : BaseViewModel() {
+class SearchViewModel @Inject constructor(private val movieUseCase: MovieUseCase) :
+    BaseViewModel() {
 
     private val queryChannel = ConflatedBroadcastChannel<String>()
 

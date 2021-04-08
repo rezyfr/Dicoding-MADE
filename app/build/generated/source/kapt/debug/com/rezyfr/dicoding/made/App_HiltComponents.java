@@ -5,6 +5,7 @@ import com.rezyfr.dicoding.core.di.DatabaseModule;
 import com.rezyfr.dicoding.core.di.NetworkModule;
 import com.rezyfr.dicoding.core.di.RepositoryModule;
 import com.rezyfr.dicoding.made.di.AppModule;
+import com.rezyfr.dicoding.made.di.FavoriteModuleDependencies;
 import com.rezyfr.dicoding.made.ui.MainActivity_GeneratedInjector;
 import com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules;
 import com.rezyfr.dicoding.made.ui.detail.DetailFragment_GeneratedInjector;
@@ -143,6 +144,7 @@ public final class App_HiltComponents {
   )
   @Singleton
   public abstract static class SingletonC implements App_GeneratedInjector,
+      FavoriteModuleDependencies,
       HiltWrapper_ActivityRetainedComponentManager_ActivityRetainedComponentBuilderEntryPoint,
       ServiceComponentManager.ServiceComponentBuilderEntryPoint,
       SingletonComponent,

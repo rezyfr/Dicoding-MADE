@@ -32,8 +32,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            >
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         </androidx.appcompat.widget.Toolbar>
 

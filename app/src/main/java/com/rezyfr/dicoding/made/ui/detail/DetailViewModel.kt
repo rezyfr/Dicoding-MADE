@@ -34,8 +34,8 @@ class DetailViewModel @Inject constructor(
         }
     }
 
-    fun deleteFromFavorite(id: Int?){
-        viewModelScope.launch(Dispatchers.IO){
+    fun deleteFromFavorite(id: Int?) {
+        viewModelScope.launch(Dispatchers.IO) {
             useCase.deleteMovieFromFavorite(id)
         }
         _isFavorited.value = false

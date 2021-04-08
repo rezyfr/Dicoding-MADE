@@ -9,8 +9,6 @@ interface BaseDao<T> {
     @Delete
     fun delete(obj: T)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(obj: T): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg objects: T)

@@ -14,9 +14,10 @@ object Releases {
     const val versionName = "1.0"
 }
 
-object Modules{
+object Modules {
     val app = ":app"
     val core = ":core"
+    val favorite = ":favmovie"
 }
 
 object Versions {
@@ -61,32 +62,38 @@ object Dependencies {
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.kotlinVersion}"
     const val appCompat = "androidx.appcompat:appcompat:${Versions.appCompatVersion}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtxVersion}"
-    const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
+    const val constraintLayout =
+        "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
     const val material = "com.google.android.material:material:${Versions.materialVersion}"
     const val activityKtx = "androidx.activity:activity-ktx:${Versions.activityKtxVersion}"
     const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtxVersion}"
     const val lifeCycle = "android.arch.lifecycle:extensions:${Versions.lifecycleVersion}"
-    const val lifecycleViewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleKtxVersion}"
-    const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleKtxVersion}"
+    const val lifecycleViewmodel =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleKtxVersion}"
+    const val lifecycleLiveData =
+        "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleKtxVersion}"
 
     // hilt
-    const val hilt =  "androidx.hilt:hilt-common:${Versions.hiltVersion}"
-    const val hiltViewModel =  "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltVersion}"
+    const val hilt = "androidx.hilt:hilt-common:${Versions.hiltVersion}"
+    const val hiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltVersion}"
     const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltVersion}" //kapt
-    const val daggerHiltAndroid =  "com.google.dagger:hilt-android:${Versions.daggerHiltVersion}"
+    const val daggerHiltAndroid = "com.google.dagger:hilt-android:${Versions.daggerHiltVersion}"
     const val daggerHiltCompiler = "com.google.dagger:hilt-compiler:${Versions.daggerHiltVersion}"
-    const val hiltTest = "com.google.dagger:hilt-android-testing:${Versions.daggerHiltVersion}" //androidTestImplementation
+    const val hiltTest =
+        "com.google.dagger:hilt-android-testing:${Versions.daggerHiltVersion}" //androidTestImplementation
 
     // coroutine
-    const val coroutineCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutineVersion}"
-    const val coroutineAndroid =  "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutineVersion}"
+    const val coroutineCore =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutineVersion}"
+    const val coroutineAndroid =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutineVersion}"
 
     // Room
-    const val roomRuntime =  "androidx.room:room-runtime:${Versions.roomVersion}"
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.roomVersion}"
     const val roomKtx = "androidx.room:room-ktx:${Versions.roomVersion}"
     const val roomCompiler = "androidx.room:room-compiler:${Versions.roomVersion}" //kapt
 
-    const val pagingRuntime =  "androidx.paging:paging-runtime:${Versions.pagingVersion}"
+    const val pagingRuntime = "androidx.paging:paging-runtime:${Versions.pagingVersion}"
 
     // Timber
     const val timber = "com.jakewharton.timber:timber:${Versions.timberVersion}"
@@ -106,7 +113,8 @@ object Dependencies {
     const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofitVersion}"
 
     // OkHttp
-    const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptorVersion}"
+    const val interceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptorVersion}"
     const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttpVersion}"
 
     // Test

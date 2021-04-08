@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="movie"
             type="com.rezyfr.dicoding.core.domain.model.Movie" />
     </data>
-    <androidx.core.widget.NestedScrollView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+
+    <androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorSecondary"
@@ -30,11 +30,10 @@
 
                     <ImageView
                         android:id="@+id/iv_backdrop"
+                        imageUrl="@{movie.backdropImage}"
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
-                        android:scaleType="centerCrop"
-                        imageUrl="@{movie.backdropImage}"
-                        />
+                        android:scaleType="centerCrop" />
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -46,11 +45,11 @@
                         android:id="@+id/iv_back"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/ic_back"
+                        android:contentDescription="@string/button_back"
                         android:paddingStart="16dp"
                         android:paddingTop="16dp"
-                        android:paddingEnd="16dp"
-                        android:background="@drawable/ic_back"
-                        android:contentDescription="@string/button_back" />
+                        android:paddingEnd="16dp" />
 
                     <LinearLayout
                         android:id="@+id/container_header"
@@ -67,8 +66,8 @@
                             android:id="@+id/tv_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textColor="@color/white"
                             android:text="@{movie.title}"
+                            android:textColor="@color/white"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
@@ -87,8 +86,8 @@
                                 android:id="@+id/tv_lang"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@{movie.originalLanguage}"
                                 android:layout_marginStart="16dp"
+                                android:text="@{movie.originalLanguage}"
                                 android:textColor="@color/white"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -103,9 +102,9 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginEnd="16dp"
                         android:isIndicator="true"
-                        android:rating="@{movie.voteAverage.floatValue()}"
                         android:numStars="5"
-                        android:progressTint="#FFD700" />
+                        android:progressTint="#FFD700"
+                        android:rating="@{movie.voteAverage.floatValue()}" />
                 </RelativeLayout>
 
                 <ImageButton

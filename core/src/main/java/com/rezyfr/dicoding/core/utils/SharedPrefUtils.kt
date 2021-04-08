@@ -20,8 +20,7 @@ object SharedPrefUtils {
         editor.apply()
     }
 
-    fun SharedPreferences.getInt(key: String): Int
-            = this.getInt(key, 0)
+    fun SharedPreferences.getInt(key: String): Int = this.getInt(key, 0)
 
     fun SharedPreferences.saveInt(key: String, value: Int?) {
         val editor = this.edit()
@@ -32,8 +31,7 @@ object SharedPrefUtils {
         editor.apply()
     }
 
-    fun SharedPreferences.getBoolean(key: String): Boolean
-            = this.getBoolean(key, false)
+    fun SharedPreferences.getBoolean(key: String): Boolean = this.getBoolean(key, false)
 
     fun SharedPreferences.saveBoolean(key: String, value: Boolean?) {
         val editor = this.edit()
@@ -59,7 +57,7 @@ object SharedPrefUtils {
         editor.apply()
     }
 
-    fun SharedPreferences.clearSharedPreferences(){
+    fun SharedPreferences.clearSharedPreferences() {
         this.edit().clear().apply()
     }
 

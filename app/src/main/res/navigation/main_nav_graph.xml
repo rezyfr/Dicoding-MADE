@@ -16,9 +16,7 @@
             app:enterAnim="@anim/fragment_close_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popEnterAnim="@anim/fragment_close_enter"
-            app:popExitAnim="@anim/fragment_close_exit"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:popExitAnim="@anim/fragment_close_exit" />
 
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
@@ -26,9 +24,7 @@
             app:enterAnim="@anim/fragment_close_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popEnterAnim="@anim/fragment_close_enter"
-            app:popExitAnim="@anim/fragment_close_exit"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:popExitAnim="@anim/fragment_close_exit" />
     </fragment>
 
     <fragment
@@ -43,9 +39,7 @@
             app:enterAnim="@anim/fragment_close_enter"
             app:exitAnim="@anim/fragment_close_exit"
             app:popEnterAnim="@anim/fragment_close_enter"
-            app:popExitAnim="@anim/fragment_close_exit"
-            app:popUpTo="@id/searchFragment"
-            app:popUpToInclusive="true" />
+            app:popExitAnim="@anim/fragment_close_exit" />
     </fragment>
 
     <fragment
@@ -57,6 +51,6 @@
         <argument
             android:name="movie"
             app:argType="com.rezyfr.dicoding.core.domain.model.Movie"
-            app:nullable="false"/>
+            app:nullable="false" />
     </fragment>
 </navigation>

@@ -4,6 +4,7 @@ package com.rezyfr.dicoding.made.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
@@ -16,14 +17,18 @@ import java.lang.Object;
 
 public abstract class FragmentSearchBinding extends ViewDataBinding {
   @NonNull
+  public final LinearLayout containerNoResult;
+
+  @NonNull
   public final RecyclerView rvSearch;
 
   @NonNull
   public final SearchView svMovie;
 
   protected FragmentSearchBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RecyclerView rvSearch, SearchView svMovie) {
+      LinearLayout containerNoResult, RecyclerView rvSearch, SearchView svMovie) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.containerNoResult = containerNoResult;
     this.rvSearch = rvSearch;
     this.svMovie = svMovie;
   }

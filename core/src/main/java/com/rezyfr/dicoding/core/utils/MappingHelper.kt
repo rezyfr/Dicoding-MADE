@@ -42,8 +42,7 @@ object MappingHelper {
     }
 
     fun mapEntitiesToDomain(input: List<MovieEntity>): List<Movie> {
-        val domainList = arrayListOf<Movie>()
-        input.map {
+        return input.map {
             Movie(
                 id = it.id,
                 title = it.title,
@@ -54,7 +53,5 @@ object MappingHelper {
                 releaseDate = it.releaseDate
             )
         }
-
-        return domainList
     }
 }

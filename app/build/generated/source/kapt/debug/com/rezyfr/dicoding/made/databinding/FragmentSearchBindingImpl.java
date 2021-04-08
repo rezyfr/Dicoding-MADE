@@ -17,6 +17,7 @@ public class FragmentSearchBindingImpl extends FragmentSearchBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.sv_movie, 1);
         sViewsWithIds.put(R.id.rv_search, 2);
+        sViewsWithIds.put(R.id.container_no_result, 3);
     }
     // views
     @NonNull
@@ -27,10 +28,11 @@ public class FragmentSearchBindingImpl extends FragmentSearchBinding  {
     // Inverse Binding Event Handlers
 
     public FragmentSearchBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 3, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
     }
     private FragmentSearchBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.LinearLayout) bindings[3]
             , (androidx.recyclerview.widget.RecyclerView) bindings[2]
             , (androidx.appcompat.widget.SearchView) bindings[1]
             );

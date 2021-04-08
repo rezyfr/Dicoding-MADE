@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.rezyfr.dicoding.core.data.source.local.entity.MovieEntity
 
 @Database(version = 1, exportSchema = false, entities = [MovieEntity::class])
-abstract class AppDatabase: RoomDatabase() {
+abstract class AppDatabase : RoomDatabase() {
     companion object {
         @Volatile
         private var instance: AppDatabase? = null

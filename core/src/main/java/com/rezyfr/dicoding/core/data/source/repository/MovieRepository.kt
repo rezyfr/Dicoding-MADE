@@ -38,13 +38,16 @@ class MovieRepository @Inject constructor(
         localDataSource.insertFavoriteMovie(movieEntity)
     }
 
-    override suspend fun getFavoriteMovies(): Flow<List<Movie>> = localDataSource.getFavoriteTourism().map {
-        MappingHelper.mapEntitiesToDomain(it)
+    override fun getFavoriteMovies(): Flow<List<Movie>> {
+        return localDataSource.getFavoriteTourism().map {
+            MappingHelper.mapEntitiesToDomain(it)
+        }
     }
 
     override suspend fun deleteMovieFromFavorite(id: Int?) {
         localDataSource.deleteFavoriteMovie(id)
     }
 
-    override suspend fun checkIfMovieFavorited(id: Int?): Boolean = localDataSource.checkIfMovieFavorited(id)
+    override suspend fun checkIfMovieFavorited(id: Int?): Boolean =
+        localDataSource.checkIfMovieFavorited(id)
 }

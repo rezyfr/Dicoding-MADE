@@ -71,8 +71,6 @@ com/rezyfr/dicoding/made/ui/home/Hilt_HomeFragment.java
  com.rezyfr.dicoding.made.ui.home.Hilt_HomeFragment
 hilt_aggregated_deps/com_rezyfr_dicoding_made_di_AppModuleModuleDeps.java
  hilt_aggregated_deps.com_rezyfr_dicoding_made_di_AppModuleModuleDeps
-com/rezyfr/dicoding/made/databinding/ItemMovieLayoutBindingImpl.java
- com.rezyfr.dicoding.made.databinding.ItemMovieLayoutBindingImpl
 com/rezyfr/dicoding/made/ui/search/SearchViewModel_Factory.java
  com.rezyfr.dicoding.made.ui.search.SearchViewModel_Factory
 hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_MainActivity_GeneratedInjectorModuleDeps.java
@@ -116,6 +114,8 @@ com/rezyfr/dicoding/made/DataBinderMapperImpl.java
  com.rezyfr.dicoding.made.DataBinderMapperImpl
  com.rezyfr.dicoding.made.DataBinderMapperImpl$InnerBrLookup
  com.rezyfr.dicoding.made.DataBinderMapperImpl$InnerLayoutIdLookup
+hilt_aggregated_deps/com_rezyfr_dicoding_made_di_FavoriteModuleDependenciesModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_di_FavoriteModuleDependenciesModuleDeps
 com/rezyfr/dicoding/made/BuildConfig.java
  com.rezyfr.dicoding.made.BuildConfig
 com/rezyfr/dicoding/made/DataBindingTriggerClass.java
@@ -134,8 +134,6 @@ com/rezyfr/dicoding/made/ui/detail/DetailViewModel_HiltModules_KeyModule_Provide
  com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
 hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_detail_DetailFragment_GeneratedInjectorModuleDeps.java
  hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_detail_DetailFragment_GeneratedInjectorModuleDeps
-com/rezyfr/dicoding/made/databinding/ItemMovieLayoutBinding.java
- com.rezyfr.dicoding.made.databinding.ItemMovieLayoutBinding
 com/rezyfr/dicoding/made/App_HiltComponents.java
  com.rezyfr.dicoding.made.App_HiltComponents
  com.rezyfr.dicoding.made.App_HiltComponents$ActivityC

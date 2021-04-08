@@ -7,4 +7,9 @@
     <string name="button_back">Back button</string>
     <string name="release_date">Release Date</string>
     <string name="overview">Overview</string>
+    <string name="title_fav">Favorite</string>
+    <string name="title_favmovie">Favorite Movie</string>
+    <string name="item_placeholder">Item placeholder</string>
+    <string name="no_search_result">Image no search result</string>
+    <string name="result_not_found">Result not found :(</string>
 </resources>
