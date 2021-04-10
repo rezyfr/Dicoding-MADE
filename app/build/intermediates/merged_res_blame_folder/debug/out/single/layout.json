@@ -4,6 +4,10 @@
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_detail.xml"
     },
     {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_splashscreen.xml",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_splashscreen.xml"
+    },
+    {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_home.xml"
     },

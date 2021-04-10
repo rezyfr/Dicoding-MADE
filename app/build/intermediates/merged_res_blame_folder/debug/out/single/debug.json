@@ -44,6 +44,10 @@
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_detail.xml"
     },
     {
+        "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/layout_fragment_splashscreen.xml.flat",
+        "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/layout/fragment_splashscreen.xml"
+    },
+    {
         "merged": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/build/intermediates/res/merged/debug/drawable_ic_popcorn.xml.flat",
         "source": "/home/rezyfr/AndroidStudioProjects/MADESubmission1/app/src/main/res/drawable/ic_popcorn.xml"
     },

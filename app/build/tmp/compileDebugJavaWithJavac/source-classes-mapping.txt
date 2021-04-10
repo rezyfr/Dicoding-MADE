@@ -16,8 +16,25 @@ com/rezyfr/dicoding/made/ui/home/HomeViewModel_HiltModules.java
  com.rezyfr.dicoding.made.ui.home.HomeViewModel_HiltModules$KeyModule
 hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_home_HomeViewModel_HiltModules_BindsModuleModuleDeps.java
  hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_home_HomeViewModel_HiltModules_BindsModuleModuleDeps
-androidx/databinding/DataBindingComponent.java
- androidx.databinding.DataBindingComponent
+com/rezyfr/dicoding/made/DaggerApp_HiltComponents_SingletonC.java
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$1
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCBuilder
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCBuilder
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$FragmentCBuilder
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$FragmentCImpl
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$FragmentCImpl$ViewWithFragmentCBuilder
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$FragmentCImpl$ViewWithFragmentCImpl
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$ViewCBuilder
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$ViewCImpl
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ViewModelCBuilder
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ViewModelCImpl
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ViewModelCImpl$SwitchingProvider
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$Builder
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ServiceCBuilder
+ com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ServiceCImpl
 com/rezyfr/dicoding/made/ui/detail/DetailViewModel_HiltModules.java
  com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules
  com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules$BindsModule
@@ -26,10 +43,10 @@ com/rezyfr/dicoding/made/ui/home/HomeFragment_GeneratedInjector.java
  com.rezyfr.dicoding.made.ui.home.HomeFragment_GeneratedInjector
 com/rezyfr/dicoding/made/ui/detail/Hilt_DetailFragment.java
  com.rezyfr.dicoding.made.ui.detail.Hilt_DetailFragment
-hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_detail_DetailViewModel_HiltModules_BindsModuleModuleDeps.java
- hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_detail_DetailViewModel_HiltModules_BindsModuleModuleDeps
-com/rezyfr/dicoding/made/databinding/FragmentHomeBinding.java
- com.rezyfr.dicoding.made.databinding.FragmentHomeBinding
+com/rezyfr/dicoding/made/ui/MainActivity_GeneratedInjector.java
+ com.rezyfr.dicoding.made.ui.MainActivity_GeneratedInjector
+com/rezyfr/dicoding/made/ui/Hilt_MainActivity.java
+ com.rezyfr.dicoding.made.ui.Hilt_MainActivity
 hilt_aggregated_deps/com_rezyfr_dicoding_made_App_GeneratedInjectorModuleDeps.java
  hilt_aggregated_deps.com_rezyfr_dicoding_made_App_GeneratedInjectorModuleDeps
 com/rezyfr/dicoding/made/databinding/FragmentSearchBindingImpl.java
@@ -42,8 +59,8 @@ com/rezyfr/dicoding/made/ui/MainViewModel_HiltModules_KeyModule_ProvideFactory.j
 com/rezyfr/dicoding/made/ui/MainViewModel_Factory.java
  com.rezyfr.dicoding.made.ui.MainViewModel_Factory
  com.rezyfr.dicoding.made.ui.MainViewModel_Factory$InstanceHolder
-com/rezyfr/dicoding/made/ui/detail/DetailFragment_GeneratedInjector.java
- com.rezyfr.dicoding.made.ui.detail.DetailFragment_GeneratedInjector
+com/rezyfr/dicoding/made/di/AppModule_ProvideUseCaseFactory.java
+ com.rezyfr.dicoding.made.di.AppModule_ProvideUseCaseFactory
 com/rezyfr/dicoding/made/ui/search/Hilt_SearchFragment.java
  com.rezyfr.dicoding.made.ui.search.Hilt_SearchFragment
 com/rezyfr/dicoding/made/ui/search/SearchFragment_GeneratedInjector.java
@@ -75,6 +92,8 @@ com/rezyfr/dicoding/made/ui/MainViewModel_HiltModules.java
  com.rezyfr.dicoding.made.ui.MainViewModel_HiltModules$KeyModule
 com/rezyfr/dicoding/made/databinding/FragmentDetailBindingImpl.java
  com.rezyfr.dicoding.made.databinding.FragmentDetailBindingImpl
+com/rezyfr/dicoding/made/databinding/FragmentSplashscreenBinding.java
+ com.rezyfr.dicoding.made.databinding.FragmentSplashscreenBinding
 hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_BindsModuleModuleDeps.java
  hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_MainViewModel_HiltModules_BindsModuleModuleDeps
 com/rezyfr/dicoding/made/ui/detail/DetailViewModel_Factory.java
@@ -115,27 +134,6 @@ com/rezyfr/dicoding/made/ui/detail/DetailViewModel_HiltModules_KeyModule_Provide
  com.rezyfr.dicoding.made.ui.detail.DetailViewModel_HiltModules_KeyModule_ProvideFactory$InstanceHolder
 hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_detail_DetailFragment_GeneratedInjectorModuleDeps.java
  hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_detail_DetailFragment_GeneratedInjectorModuleDeps
-com/rezyfr/dicoding/made/DaggerApp_HiltComponents_SingletonC.java
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$1
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCBuilder
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCBuilder
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$FragmentCBuilder
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$FragmentCImpl
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$FragmentCImpl$ViewWithFragmentCBuilder
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$FragmentCImpl$ViewWithFragmentCImpl
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$ViewCBuilder
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ActivityCImpl$ViewCImpl
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ViewModelCBuilder
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ViewModelCImpl
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ActivityRetainedCImpl$ViewModelCImpl$SwitchingProvider
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$Builder
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ServiceCBuilder
- com.rezyfr.dicoding.made.DaggerApp_HiltComponents_SingletonC$ServiceCImpl
-com/rezyfr/dicoding/made/di/AppModule_ProvideUseCaseFactory.java
- com.rezyfr.dicoding.made.di.AppModule_ProvideUseCaseFactory
 com/rezyfr/dicoding/made/App_HiltComponents.java
  com.rezyfr.dicoding.made.App_HiltComponents
  com.rezyfr.dicoding.made.App_HiltComponents$ActivityC
@@ -160,10 +158,14 @@ com/rezyfr/dicoding/made/App_HiltComponents.java
  com.rezyfr.dicoding.made.App_HiltComponents$ViewWithFragmentC
  com.rezyfr.dicoding.made.App_HiltComponents$ViewWithFragmentC$Builder
  com.rezyfr.dicoding.made.App_HiltComponents$ViewWithFragmentCBuilderModule
-com/rezyfr/dicoding/made/ui/MainActivity_GeneratedInjector.java
- com.rezyfr.dicoding.made.ui.MainActivity_GeneratedInjector
-com/rezyfr/dicoding/made/ui/Hilt_MainActivity.java
- com.rezyfr.dicoding.made.ui.Hilt_MainActivity
+com/rezyfr/dicoding/made/databinding/FragmentHomeBinding.java
+ com.rezyfr.dicoding.made.databinding.FragmentHomeBinding
 com/rezyfr/dicoding/made/Hilt_App.java
  com.rezyfr.dicoding.made.Hilt_App
  com.rezyfr.dicoding.made.Hilt_App$1
+hilt_aggregated_deps/com_rezyfr_dicoding_made_ui_detail_DetailViewModel_HiltModules_BindsModuleModuleDeps.java
+ hilt_aggregated_deps.com_rezyfr_dicoding_made_ui_detail_DetailViewModel_HiltModules_BindsModuleModuleDeps
+com/rezyfr/dicoding/made/ui/detail/DetailFragment_GeneratedInjector.java
+ com.rezyfr.dicoding.made.ui.detail.DetailFragment_GeneratedInjector
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent

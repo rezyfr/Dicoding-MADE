@@ -1804,6 +1804,7 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_searchFragment_to_detailFragment
+id action_splashscreenFragment_to_homeFragment
 id action_text
 id actions
 id activity_chooser_view_content
@@ -2104,6 +2105,7 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id splashscreenFragment
 id spline
 id split_action_bar
 id spread
@@ -2273,6 +2275,7 @@ layout dialog_loading
 layout fragment_detail
 layout fragment_home
 layout fragment_search
+layout fragment_splashscreen
 layout item_movie_grid_layout
 layout item_movie_layout
 layout material_chip_input_combo
@@ -2387,6 +2390,7 @@ string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
 string button_back
+string cd_splash
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
