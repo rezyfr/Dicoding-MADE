@@ -67,11 +67,16 @@ public final class HomeFragmentDirections {
         }
     }
     
-    @kotlin.Metadata(mv = {1, 4, 2}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006J\u0006\u0010\u0007\u001a\u00020\u0004\u00a8\u0006\b"}, d2 = {"Lcom/rezyfr/dicoding/made/ui/home/HomeFragmentDirections$Companion;", "", "()V", "actionHomeFragmentToDetailFragment", "Landroidx/navigation/NavDirections;", "movie", "Lcom/rezyfr/dicoding/core/domain/model/Movie;", "actionHomeFragmentToSearchFragment", "app_debug"})
+    @kotlin.Metadata(mv = {1, 4, 2}, bv = {1, 0, 3}, k = 1, d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\b\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006J\u0006\u0010\u0007\u001a\u00020\u0004J\u0006\u0010\b\u001a\u00020\u0004\u00a8\u0006\t"}, d2 = {"Lcom/rezyfr/dicoding/made/ui/home/HomeFragmentDirections$Companion;", "", "()V", "actionHomeFragmentToDetailFragment", "Landroidx/navigation/NavDirections;", "movie", "Lcom/rezyfr/dicoding/core/domain/model/Movie;", "actionHomeFragmentToFavoriteFragment", "actionHomeFragmentToSearchFragment", "app_debug"})
     public static final class Companion {
         
         @org.jetbrains.annotations.NotNull()
         public final androidx.navigation.NavDirections actionHomeFragmentToSearchFragment() {
+            return null;
+        }
+        
+        @org.jetbrains.annotations.NotNull()
+        public final androidx.navigation.NavDirections actionHomeFragmentToFavoriteFragment() {
             return null;
         }
         

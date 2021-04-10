@@ -15,6 +15,8 @@ class MainActivity : BaseActivity<BaseViewModel, ActivityMainBinding>() {
 
     override fun contentView() = R.layout.activity_main
 
+    override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
+
     override val viewModel by viewModels<MainViewModel>()
 
     private lateinit var navHostFragment: NavHostFragment
@@ -28,16 +30,11 @@ class MainActivity : BaseActivity<BaseViewModel, ActivityMainBinding>() {
 
     private fun setupToolbar() {
         setSupportActionBar(binding.toolbarMain)
-        binding.toolbarMain.setOnMenuItemClickListener {
-            when (it.itemId) {
-                //TODO handle later
-            }
-            false
-        }
     }
 
     private fun setupNavigation() {
         val navController = findNavController(R.id.main_nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
+
 }

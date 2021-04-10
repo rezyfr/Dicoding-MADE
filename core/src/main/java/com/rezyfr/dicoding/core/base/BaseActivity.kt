@@ -4,8 +4,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
+import androidx.viewbinding.ViewBinding
 import com.rezyfr.dicoding.core.R
 import com.rezyfr.dicoding.core.utils.hideLoadingDialog
 import com.rezyfr.dicoding.core.utils.showLoadingDialog
@@ -13,18 +12,18 @@ import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
-abstract class BaseActivity<VM : BaseViewModel, T : ViewDataBinding> : AppCompatActivity() {
+abstract class BaseActivity<VM : BaseViewModel, B : ViewBinding> : AppCompatActivity() {
 
     @LayoutRes
     protected abstract fun contentView(): Int
     protected abstract val viewModel: VM
     protected abstract fun setupView()
-    protected lateinit var binding: T
-        private set
+    lateinit var binding: B
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, contentView())
+        binding = getViewBinding()
+        setContentView(binding.root)
         setupView()
         observeErrorEvent()
     }
@@ -72,4 +71,6 @@ abstract class BaseActivity<VM : BaseViewModel, T : ViewDataBinding> : AppCompat
         onBackPressed()
         return super.onSupportNavigateUp()
     }
+
+    abstract fun getViewBinding(): B
 }

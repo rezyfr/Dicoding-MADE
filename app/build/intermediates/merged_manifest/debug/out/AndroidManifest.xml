@@ -58,31 +58,16 @@
             android:name="com.google.android.play.core.assetpacks.ExtractionForegroundService"
             android:enabled="false"
             android:exported="false" />
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:directBootAware="true"
+            android:exported="false" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
             android:authorities="com.rezyfr.made.lifecycle-process"
             android:exported="false"
             android:multiprocess="true" />
-
-        <service
-            android:name="androidx.room.MultiInstanceInvalidationService"
-            android:directBootAware="true"
-            android:exported="false" />
-
-        <activity
-            android:name="com.rezyfr.dicoding.favmovie.FavoriteActivity"
-            android:splitName="favmovie" >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="favorite"
-                    android:scheme="submission" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

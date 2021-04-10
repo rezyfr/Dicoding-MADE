@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.rezyfr.dicoding.core.base.BaseFragment
 import com.rezyfr.dicoding.made.R
 import com.rezyfr.dicoding.made.databinding.FragmentDetailBinding
@@ -31,6 +32,9 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>() {
                     if (isFavorited) viewModel.deleteFromFavorite(movie.id)
                     else viewModel.addMovieToFavorite(movie)
                 }
+            }
+            btnBack.setOnClickListener {
+                findNavController().navigateUp()
             }
         }
     }

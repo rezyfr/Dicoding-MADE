@@ -36,6 +36,9 @@ public class HomeFragmentDirections private constructor() {
     public fun actionHomeFragmentToSearchFragment(): NavDirections =
         ActionOnlyNavDirections(R.id.action_homeFragment_to_searchFragment)
 
+    public fun actionHomeFragmentToFavoriteFragment(): NavDirections =
+        ActionOnlyNavDirections(R.id.action_homeFragment_to_favoriteFragment)
+
     public fun actionHomeFragmentToDetailFragment(movie: Movie): NavDirections =
         ActionHomeFragmentToDetailFragment(movie)
   }

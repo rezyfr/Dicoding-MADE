@@ -59,8 +59,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         val splitInstallManager = SplitInstallManagerFactory.create(requireContext())
         val moduleChat = "favmovie"
         if (splitInstallManager.installedModules.contains(moduleChat)) {
-            val uri = Uri.parse("submission://favorite")
-            startActivity(Intent(Intent.ACTION_VIEW, uri))
+//            val uri = Uri.parse("submission://favorite")
+//            startActivity(Intent(Intent.ACTION_VIEW, uri))
+            val action = HomeFragmentDirections.actionHomeFragmentToFavoriteFragment()
+            findNavController().navigate(action)
         } else {
             val request = SplitInstallRequest.newBuilder()
                 .addModule(moduleChat)

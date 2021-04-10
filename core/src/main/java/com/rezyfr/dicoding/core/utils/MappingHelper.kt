@@ -35,9 +35,10 @@ object MappingHelper {
             title = input.title,
             backdropPath = input.backdropPath,
             originalLanguage = input.originalLanguage,
-            voteAverage = input.voteAverage,
+            voteAverage = input.voteAverage?.div(2),
             posterPath = input.posterPath,
-            releaseDate = input.releaseDate
+            releaseDate = input.releaseDate,
+            overview = input.overview
         )
     }
 
@@ -50,7 +51,8 @@ object MappingHelper {
                 originalLanguage = it.originalLanguage,
                 voteAverage = it.voteAverage,
                 posterPath = it.posterPath,
-                releaseDate = it.releaseDate
+                releaseDate = it.releaseDate,
+                overview = it.overview
             )
         }
     }

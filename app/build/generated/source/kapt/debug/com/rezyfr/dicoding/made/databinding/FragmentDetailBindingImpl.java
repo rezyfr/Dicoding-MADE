@@ -16,7 +16,7 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.container_backdrop, 7);
-        sViewsWithIds.put(R.id.iv_back, 8);
+        sViewsWithIds.put(R.id.btn_back, 8);
         sViewsWithIds.put(R.id.container_header, 9);
         sViewsWithIds.put(R.id.tv_genre, 10);
         sViewsWithIds.put(R.id.btn_favorite, 11);
@@ -34,10 +34,10 @@ public class FragmentDetailBindingImpl extends FragmentDetailBinding  {
     }
     private FragmentDetailBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.ImageButton) bindings[8]
             , (android.widget.ImageButton) bindings[11]
             , (android.widget.RelativeLayout) bindings[7]
             , (android.widget.LinearLayout) bindings[9]
-            , (android.widget.ImageButton) bindings[8]
             , (android.widget.ImageView) bindings[1]
             , (android.widget.RatingBar) bindings[4]
             , (android.widget.TextView) bindings[5]

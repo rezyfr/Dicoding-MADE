@@ -12,4 +12,6 @@
     <string name="item_placeholder">Item placeholder</string>
     <string name="no_search_result">Image no search result</string>
     <string name="result_not_found">Result not found :(</string>
+    <string name="image_backdrop">Image backdrop for detail page</string>
+    <string name="favorite_button">Button for adding the movie to favorite list</string>
 </resources>

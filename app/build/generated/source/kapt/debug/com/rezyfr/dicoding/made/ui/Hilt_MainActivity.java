@@ -3,8 +3,8 @@ package com.rezyfr.dicoding.made.ui;
 import android.os.Bundle;
 import androidx.annotation.CallSuper;
 import androidx.annotation.Nullable;
-import androidx.databinding.ViewDataBinding;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewbinding.ViewBinding;
 import com.rezyfr.dicoding.core.base.BaseActivity;
 import com.rezyfr.dicoding.core.base.BaseViewModel;
 import dagger.hilt.android.internal.lifecycle.DefaultViewModelFactories;
@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * A generated base class to be extended by the @dagger.hilt.android.AndroidEntryPoint annotated class. If using the Gradle plugin, this is swapped as the base class via bytecode transformation.
  */
 @Generated("dagger.hilt.android.processor.internal.androidentrypoint.ActivityGenerator")
-public abstract class Hilt_MainActivity<VM extends BaseViewModel, T extends ViewDataBinding> extends BaseActivity<VM, T> implements GeneratedComponentManagerHolder {
+public abstract class Hilt_MainActivity<VM extends BaseViewModel, B extends ViewBinding> extends BaseActivity<VM, B> implements GeneratedComponentManagerHolder {
   private volatile ActivityComponentManager componentManager;
 
   private final Object componentManagerLock = new Object();

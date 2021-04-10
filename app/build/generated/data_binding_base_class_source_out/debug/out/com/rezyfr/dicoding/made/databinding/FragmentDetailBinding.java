@@ -22,6 +22,9 @@ import java.lang.Object;
 
 public abstract class FragmentDetailBinding extends ViewDataBinding {
   @NonNull
+  public final ImageButton btnBack;
+
+  @NonNull
   public final ImageButton btnFavorite;
 
   @NonNull
@@ -29,9 +32,6 @@ public abstract class FragmentDetailBinding extends ViewDataBinding {
 
   @NonNull
   public final LinearLayout containerHeader;
-
-  @NonNull
-  public final ImageButton ivBack;
 
   @NonNull
   public final ImageView ivBackdrop;
@@ -58,14 +58,14 @@ public abstract class FragmentDetailBinding extends ViewDataBinding {
   protected Movie mMovie;
 
   protected FragmentDetailBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageButton btnFavorite, RelativeLayout containerBackdrop, LinearLayout containerHeader,
-      ImageButton ivBack, ImageView ivBackdrop, RatingBar ratingBar, TextView tvDate,
+      ImageButton btnBack, ImageButton btnFavorite, RelativeLayout containerBackdrop,
+      LinearLayout containerHeader, ImageView ivBackdrop, RatingBar ratingBar, TextView tvDate,
       TextView tvGenre, TextView tvLang, TextView tvOverview, TextView tvTitle) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.btnBack = btnBack;
     this.btnFavorite = btnFavorite;
     this.containerBackdrop = containerBackdrop;
     this.containerHeader = containerHeader;
-    this.ivBack = ivBack;
     this.ivBackdrop = ivBackdrop;
     this.ratingBar = ratingBar;
     this.tvDate = tvDate;

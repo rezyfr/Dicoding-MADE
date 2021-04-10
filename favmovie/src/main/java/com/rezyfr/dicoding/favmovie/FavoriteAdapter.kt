@@ -9,6 +9,8 @@ import com.rezyfr.dicoding.core.domain.model.Movie
 class FavoriteAdapter(private val data: ArrayList<Movie>) :
     RecyclerView.Adapter<FavoriteAdapter.MovieViewHolder>() {
 
+    var onItemClick: ((Movie?) -> Unit)? = null
+
     fun setData(items: List<Movie>) {
         data.apply {
             clear()
@@ -35,6 +37,9 @@ class FavoriteAdapter(private val data: ArrayList<Movie>) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) {
             binding.movie = movie
+            binding.root.setOnClickListener {
+                onItemClick?.invoke(binding.movie)
+            }
         }
     }
 }
