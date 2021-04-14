@@ -28,7 +28,8 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
             if (it.isNotEmpty()) {
                 favoriteAdapter.setData(it)
                 binding.rvSearch.visibility = View.VISIBLE
-                binding.containerNoFav.visibility = View.GONE
+                binding.ivNoData.visibility = View.GONE
+                binding.tvNoData.visibility = View.GONE
             }
         })
     }

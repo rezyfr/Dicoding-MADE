@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.rezyfr.made",
+  "applicationId": "com.rezyfr.dicoding.made",
   "variantName": "debug",
   "elements": []
 }

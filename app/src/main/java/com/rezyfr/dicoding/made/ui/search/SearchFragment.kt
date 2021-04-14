@@ -31,7 +31,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
                 if (it.toString().isNotEmpty()) {
                     searchPagingAdapter.submitData(it)
                     binding.rvSearch.visibility = View.VISIBLE
-                    binding.containerNoResult.visibility = View.GONE
+                    binding.ivNoData.visibility = View.GONE
+                    binding.tvNoData.visibility = View.GONE
                 }
             }
         })

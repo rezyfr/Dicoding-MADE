@@ -112,8 +112,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun observeData() {
         viewModel.movieFlow.observe(viewLifecycleOwner) {
             lifecycleScope.launch {
-                val data = it
-                homePagingAdapter.submitData(data)
+                it?.let {
+                    homePagingAdapter.submitData(it)
+                }
             }
         }
     }

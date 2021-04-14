@@ -1,7 +1,7 @@
 object DefaultConfig {
-    const val appId = "com.rezyfr.made"
+    const val appId = "com.rezyfr.dicoding.made"
 
-    const val minSdk = 21
+    const val minSdk = 23
     const val targetSdk = 30
     const val compileSdk = 30
     const val buildTools = "30.0.3"
@@ -15,9 +15,9 @@ object Releases {
 }
 
 object Modules {
-    val app = ":app"
-    val core = ":core"
-    val favorite = ":favmovie"
+    const val app = ":app"
+    const val core = ":core"
+    const val favorite = ":favmovie"
 }
 
 object Versions {
