@@ -1,0 +1,32 @@
+plugins {
+    id 'com.android.dynamic-feature'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+apply from: "$rootDir/shared_dependencies.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId "com.rezyfr.dicoding.favmovie"
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField('String', 'APP_TYPE', '"debug"')
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation project(Modules.core)
+    implementation project(Modules.app)
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}

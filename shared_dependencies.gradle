@@ -1,0 +1,81 @@
+android {
+    compileSdkVersion DefaultConfig.compileSdk
+    buildToolsVersion DefaultConfig.buildTools
+
+    defaultConfig {
+        minSdkVersion DefaultConfig.minSdk
+        targetSdkVersion DefaultConfig.targetSdk
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+
+        testInstrumentationRunner DefaultConfig.testRunner
+
+        buildConfigField('String', 'BASE_URL', "\"https://api.themoviedb.org/\"")
+        buildConfigField('String', 'IMAGE_URL', "\"https://image.tmdb.org/t/p/w200/\"")
+        buildConfigField("String", "BACKDROP_URL", "\"https://image.tmdb.org/t/p/w500\"")
+        buildConfigField("String", "API_KEY", "\"2cdf3a5c7cf412421485f89ace91e373\"")
+        buildConfigField("String", "YOUTUBE_URL", "\"https://www.youtube.com/watch?v=\"")
+        buildConfigField("String", "API_KEY", "\"2cdf3a5c7cf412421485f89ace91e373\"")
+        buildConfigField("String", "YOUTUBE_URL", "\"https://www.youtube.com/watch?v=\"")
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField('String', 'APP_TYPE', '"debug"')
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField('String', 'APP_TYPE', '"release"')
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
+    packagingOptions {
+        exclude 'META-INF/gradle/incremental.annotation.processors'
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation Dependencies.kotlin
+    implementation Dependencies.appCompat
+    implementation Dependencies.coreKtx
+    implementation Dependencies.constraintLayout
+    implementation Dependencies.material
+    implementation Dependencies.lifeCycle
+    implementation Dependencies.navFragment
+    implementation Dependencies.navUi
+    implementation Dependencies.glide
+    implementation Dependencies.glideLegacy
+    kapt Dependencies.glideKapt
+    implementation Dependencies.lifecycleLiveData
+    implementation Dependencies.pagingRuntime
+
+    implementation Dependencies.hilt
+    implementation Dependencies.hiltViewModel
+    kapt Dependencies.hiltCompiler
+    implementation Dependencies.daggerHiltAndroid
+    implementation Dependencies.daggerHiltCompiler
+    implementation Dependencies.timber
+
+    androidTestImplementation Dependencies.hiltTest
+
+    testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.extJunit
+    androidTestImplementation Dependencies.espresso
+}

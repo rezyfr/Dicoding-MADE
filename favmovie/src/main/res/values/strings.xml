@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="favorite_movie">Favorite Movie</string>
+    <string name="no_fav_desc">You haven\'t add any favorite movies</string>
+    <string name="no_fav_image">No fav image</string>
+</resources>

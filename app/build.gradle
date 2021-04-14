@@ -1,0 +1,26 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'dagger.hilt.android.plugin'
+}
+apply from: "$rootDir/shared_dependencies.gradle"
+
+android {
+    defaultConfig {
+        applicationId DefaultConfig.appId
+    }
+    dynamicFeatures = [Modules.favorite]
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation Dependencies.lifecycleViewmodel
+    implementation Dependencies.lifecycleLiveData
+    implementation "com.google.android.play:core:1.10.0"
+    implementation Dependencies.navFragment
+    implementation Dependencies.navUi
+    implementation project(Modules.core)
+}

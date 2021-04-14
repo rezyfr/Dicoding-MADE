@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="200dp"
+        android:height="400dp">
+        <shape
+            android:shape="rectangle"
+            android:tint="@color/colorSecondary" />
+    </item>
+    <item
+        android:width="100dp"
+        android:height="100dp"
+        android:drawable="@drawable/img_movie"
+        android:left="50dp"
+        android:top="150dp" />
+</layer-list>
