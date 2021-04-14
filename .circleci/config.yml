@@ -40,5 +40,7 @@
           - store_artifacts:  
               path: app/build/outputs/apk/debug/
               destination: artifact-file
-
+        environment:
+            JVM_OPTS: -Xmx2048m
+            GRADLE_OPTS: -Xmx1536m -XX:+HeapDumpOnOutOfMemoryError -Dorg.gradle.caching=true -Dorg.gradle.configureondemand=true -Dkotlin.compiler.execution.strategy=in-process -Dkotlin.incremental=false
     
