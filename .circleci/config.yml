@@ -3,6 +3,11 @@
     orbs:
       android: circleci/android@0.2.1
      
+    triggers:
+       - branches:
+           only:
+               - main
+
     jobs:
       build:
         executor: android/android
@@ -35,3 +40,5 @@
           - store_artifacts:  
               path: app/build/outputs/apk/debug/
               destination: artifact-file
+
+    
