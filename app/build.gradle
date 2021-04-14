@@ -12,6 +12,14 @@ android {
     defaultConfig {
         applicationId DefaultConfig.appId
     }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
     dynamicFeatures = [Modules.favorite]
 }
 
