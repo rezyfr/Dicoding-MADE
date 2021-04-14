@@ -32,9 +32,7 @@ dependencies {
     implementation Dependencies.coroutineAndroid
 
     // OkHttp
-    api(Dependencies.okHttp) {
-        force = true
-    }
+    api Dependencies.okHttp
     api Dependencies.interceptor
 
     api Dependencies.lifecycleLiveData
