@@ -16,7 +16,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>() {
 
     override val viewModel: DetailViewModel by viewModels()
 
-    var isFavorited = false
+    private var isFavorited = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

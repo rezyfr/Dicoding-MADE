@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:width="200dp"
-        android:height="400dp">
+        android:height="400dp"
+        tools:targetApi="m">
         <shape
             android:shape="rectangle"
             android:tint="@color/colorSecondary" />

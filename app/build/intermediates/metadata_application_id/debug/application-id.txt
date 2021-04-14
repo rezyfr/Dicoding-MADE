@@ -1,1 +1,1 @@
-com.rezyfr.made
+com.rezyfr.dicoding.made
