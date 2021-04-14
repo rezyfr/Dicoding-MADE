@@ -4,7 +4,7 @@
             "outputFile": "/home/rezyfr/AndroidStudioProjects/MADE-Submission/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "/home/rezyfr/.gradle/caches/transforms-2/files-2.1/9bfe0e611f769132f6b2188739ea3a9d/appcompat-1.2.0/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "/home/rezyfr/.gradle/caches/transforms-2/files-2.1/ff2d1c151b080d4f4ffbbc1e320a0c0b/appcompat-1.2.0/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
