@@ -8,10 +8,12 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
+import androidx.paging.PagingData
 import com.google.android.play.core.splitinstall.SplitInstallManagerFactory
 import com.google.android.play.core.splitinstall.SplitInstallRequest
-import com.rezyfr.dicoding.core.base.BaseFragment
+import com.rezyfr.dicoding.core.base.BaseDataBindingFragment
 import com.rezyfr.dicoding.core.domain.model.Movie
 import com.rezyfr.dicoding.made.R
 import com.rezyfr.dicoding.made.databinding.FragmentHomeBinding
@@ -20,11 +22,12 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
+class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun layoutRes(): Int = R.layout.fragment_home
     override val viewModel: HomeViewModel by viewModels()
-    private lateinit var homePagingAdapter: HomePagingAdapter
+    private lateinit var popularMoviesAdapter: HomePagingAdapter
+    private lateinit var nowPlayingMoviesAdapter: HomePagingAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,7 +41,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.menu_search -> {
-                        val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment()
+                        val action = HomeFragmentDirections.actionHomeFragmentToSearchFragment(null)
                         findNavController().navigate(action)
                     }
                     R.id.menu_favorite -> {
@@ -51,7 +54,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                 }
                 false
             }
-            title = "Movie App"
         }
     }
 
@@ -59,8 +61,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
         val splitInstallManager = SplitInstallManagerFactory.create(requireContext())
         val moduleChat = "favmovie"
         if (splitInstallManager.installedModules.contains(moduleChat)) {
-//            val uri = Uri.parse("submission://favorite")
-//            startActivity(Intent(Intent.ACTION_VIEW, uri))
             val action = HomeFragmentDirections.actionHomeFragmentToFavoriteFragment()
             findNavController().navigate(action)
         } else {
@@ -81,48 +81,74 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     }
 
     private fun setAdapter() {
-        homePagingAdapter = HomePagingAdapter()
-        homePagingAdapter.onItemClick = {
+        popularMoviesAdapter = HomePagingAdapter()
+        popularMoviesAdapter.onItemClick = {
             toMovieDetail(it)
         }
-        binding.rvMovie.adapter = homePagingAdapter
+        popularMoviesAdapter.addLoadStateListener { loadState ->
+            loadStateListener(loadState)
+        }
+        binding.rvPopular.adapter = popularMoviesAdapter
 
-        homePagingAdapter.addLoadStateListener { loadState ->
-            if (loadState.refresh is LoadState.Loading ||
-                loadState.append is LoadState.Loading
-            )
-                handleLoading(true)
-            else {
-                handleLoading(false)
+        nowPlayingMoviesAdapter = HomePagingAdapter()
+        nowPlayingMoviesAdapter.onItemClick = {
+            toMovieDetail(it)
+        }
+        nowPlayingMoviesAdapter.addLoadStateListener { loadState ->
+            loadStateListener(loadState)
+        }
+        binding.rvNowplaying.adapter = nowPlayingMoviesAdapter
+    }
 
-                // If we have an error, show a toast
-                val errorState = when {
-                    loadState.append is LoadState.Error -> loadState.append as LoadState.Error
-                    loadState.prepend is LoadState.Error -> loadState.prepend as LoadState.Error
-                    loadState.refresh is LoadState.Error -> loadState.refresh as LoadState.Error
-                    else -> null
-                }
-                errorState?.let {
-                    handleErrorMessage(it.error.toString())
-                }
+    private fun loadStateListener(loadState: CombinedLoadStates) {
+        if (loadState.refresh is LoadState.Loading ||
+            loadState.append is LoadState.Loading
+        )
+            handleLoading(true)
+        else {
+            handleLoading(false)
+
+            // If we have an error, show a toast
+            val errorState = when {
+                loadState.append is LoadState.Error -> loadState.append as LoadState.Error
+                loadState.prepend is LoadState.Error -> loadState.prepend as LoadState.Error
+                loadState.refresh is LoadState.Error -> loadState.refresh as LoadState.Error
+                else -> null
+            }
+            errorState?.let {
+                handleErrorMessage(it.error.toString())
             }
         }
     }
 
     override fun observeData() {
-        viewModel.movieFlow.observe(viewLifecycleOwner) {
-            lifecycleScope.launch {
-                it?.let {
-                    homePagingAdapter.submitData(it)
-                }
-            }
+        viewModel.popularMovies.observe(viewLifecycleOwner, ::observePopularList)
+        viewModel.nowPlayingMovies.observe(viewLifecycleOwner, ::observeNowPlayingList)
+    }
+
+    private fun observePopularList(list: PagingData<Movie>) {
+        lifecycleScope.launch {
+            popularMoviesAdapter.submitData(list)
+        }
+    }
+
+    private fun observeNowPlayingList(list: PagingData<Movie>) {
+        lifecycleScope.launch {
+            nowPlayingMoviesAdapter.submitData(list)
         }
     }
 
     private fun toMovieDetail(movie: Movie?) {
-        val bundle = Bundle()
-        bundle.putParcelable("movie", movie)
-        findNavController().navigate(R.id.detailFragment, bundle)
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(movie?.id ?: 0)
+        findNavController().navigate(action)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.rvNowplaying.adapter = null
+        binding.rvPopular.adapter = null
+        binding.scrollView.removeAllViewsInLayout()
+        binding.scrollView.removeAllViews()
+        binding.invalidateAll()
+    }
 }

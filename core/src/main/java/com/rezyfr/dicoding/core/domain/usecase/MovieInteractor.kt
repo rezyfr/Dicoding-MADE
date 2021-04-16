@@ -8,8 +8,12 @@ import javax.inject.Inject
 
 class MovieInteractor @Inject constructor(private val movieRepository: IMovieRepository) :
     MovieUseCase {
-    override fun discoverMovies(): Flow<PagingData<Movie>> {
-        return movieRepository.discoverMovies()
+    override fun discoverPopularMovies(): Flow<PagingData<Movie>> {
+        return movieRepository.discoverPopularMovies()
+    }
+
+    override fun discoverNowPlayingMovies(): Flow<PagingData<Movie>> {
+        return movieRepository.discoverNowPlayingMovies()
     }
 
     override fun searchMovies(query: String): Flow<PagingData<Movie>> {
@@ -30,4 +34,8 @@ class MovieInteractor @Inject constructor(private val movieRepository: IMovieRep
 
     override suspend fun checkIfMovieFavorited(id: Int?): Boolean =
         movieRepository.checkIfMovieFavorited(id)
+
+    override suspend fun getMovieDetail(id: Int): Flow<Movie> {
+        return movieRepository.getMovieDetail(id)
+    }
 }

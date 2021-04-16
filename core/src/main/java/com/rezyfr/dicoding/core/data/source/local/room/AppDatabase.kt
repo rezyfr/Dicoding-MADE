@@ -5,6 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.rezyfr.dicoding.core.data.source.local.entity.MovieEntity
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 
 @Database(version = 1, exportSchema = false, entities = [MovieEntity::class])
 abstract class AppDatabase : RoomDatabase() {
@@ -18,12 +20,15 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
+        val passPhrase: ByteArray = SQLiteDatabase.getBytes("submission".toCharArray())
+        val factory = SupportFactory(passPhrase)
+
         private fun buildDatabase(context: Context) =
             Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
-                "MADE-Submission1.db"
-            ).build()
+                "MADE-Submission.db"
+            ).openHelperFactory(factory).build()
     }
 
     abstract fun movieDao(): MovieDao

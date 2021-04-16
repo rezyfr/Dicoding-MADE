@@ -12,15 +12,12 @@ interface MovieDao : BaseDao<MovieEntity> {
     @Query("SELECT * FROM movie")
     fun getAllFavoriteMovies(): Flow<List<MovieEntity>>
 
-    @Query("SELECT * FROM movie")
-    fun getAllFavoriteMoviesWithoutFlow(): List<MovieEntity>
-
     @Query("SELECT * FROM movie WHERE id = :id")
     fun getMovie(id: Int?): Flow<MovieEntity>
 
     @Query("DELETE FROM movie WHERE id = :id")
     fun deleteFavoriteMoviesById(id: Int?)
 
-    @Query("SELECT EXISTS (SELECT 1 FROM movie WHERE id = :id)")
-    fun exists(id: Int?): Boolean
+    @Query("SELECT EXISTS (SELECT 1 FROM movie WHERE id = :id AND isFavorite = 1)")
+    fun isFavorite(id: Int?): Boolean
 }

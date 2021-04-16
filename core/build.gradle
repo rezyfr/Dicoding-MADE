@@ -15,6 +15,12 @@ android {
         buildConfigField('String', 'IMAGE_URL', IMAGE_URL)
         buildConfigField('String', 'BACKDROP_URL', BACKDROP_URL)
     }
+    buildTypes {
+        release{
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
@@ -30,6 +36,9 @@ dependencies {
     // Coroutine
     implementation Dependencies.coroutineCore
     implementation Dependencies.coroutineAndroid
+
+    implementation Dependencies.sqlCipher
+    implementation Dependencies.sqlite
 
     // OkHttp
     api Dependencies.okHttp

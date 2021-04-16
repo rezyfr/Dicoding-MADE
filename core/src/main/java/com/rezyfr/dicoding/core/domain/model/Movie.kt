@@ -19,7 +19,8 @@ data class Movie(
     val voteAverage: Double? = null,
     val id: Int? = null,
     val adult: Boolean? = null,
-    val voteCount: Int? = null
+    val voteCount: String? = null,
+    val duration: String? = null
 ) : Parcelable {
 
     fun getPosterImage() =

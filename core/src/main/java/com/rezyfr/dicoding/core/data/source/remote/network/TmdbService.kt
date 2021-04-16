@@ -7,18 +7,24 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface TmdbService {
-    @GET("3/discover/movie")
-    suspend fun getDiscoverMovie(
+    @GET("movie/")
+    suspend fun discoverMovie(
         @Query("page") page: Int
     ): MovieListResponse
 
-    @GET("3/search/movie")
+    @GET("movie/{type}")
+    suspend fun getMovieByType(
+        @Path("type") list: String,
+        @Query("page") page: Int
+    ): MovieListResponse
+
+    @GET("search/movie")
     suspend fun searchMovie(
         @Query("query") query: String
     ): MovieListResponse
 
-    @GET("3/movie/{movie_id}")
+    @GET("movie/{movie_id}")
     suspend fun getMovieDetail(
-        @Path("movie_id") movie_id: Int
+        @Path("movie_id") movieId: Int
     ): MovieDetailResponse
 }

@@ -21,6 +21,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
     }
     private lateinit var favoriteAdapter: FavoriteAdapter
 
+    override fun getViewBinding() = FragmentFavoriteBinding.inflate(layoutInflater)
     override fun layoutRes(): Int = R.layout.fragment_favorite
 
     override fun observeData() {
@@ -60,10 +61,8 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
 
 
     private fun toMovieDetail(movie: Movie?) {
-        val bundle = Bundle()
-        bundle.putParcelable("movie", movie)
         movie?.let {
-            val action = FavoriteFragmentDirections.actionFavoriteFragmentToDetailFragment(movie)
+            val action = FavoriteFragmentDirections.actionFavoriteFragmentToDetailFragment(movie.id ?: 0)
             findNavController().navigate(action)
         }
     }

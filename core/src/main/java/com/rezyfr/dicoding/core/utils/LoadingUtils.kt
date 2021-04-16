@@ -5,7 +5,8 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.lifecycle.*
+import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import com.rezyfr.dicoding.core.R
 
 
@@ -28,13 +29,6 @@ fun Context?.showLoadingDialog(
         }
         if (context is LifecycleOwner) {
             context.lifecycle.addObserver(object : LifecycleObserver {
-                @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-                fun onDestroy() {
-                    this@apply.dismiss()
-                    if (loadingDialog === this@apply) {
-                        loadingDialog = null
-                    }
-                }
             })
         }
         loadingDialog = this
