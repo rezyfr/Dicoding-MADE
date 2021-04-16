@@ -46,6 +46,9 @@ jobs:
           configuration-cache-enabled: true
           arguments: assembleRelease
           
+      - name: Generate Coverage Report
+        run: ./gradlew createDebugCoverageReport
+        
       - name: Codecov
         uses: codecov/codecov-action@v1.3.2
         with:
@@ -53,5 +56,6 @@ jobs:
           token: ee857b46-667a-48e9-a0c9-4e6d5791996c
           # User defined upload name. Visible in Codecov UI
           name: Dicoding-MADE
+          files: app/build/reports/coverage/debug/report.xml
           # Specify the branch name
           override_branch: main
