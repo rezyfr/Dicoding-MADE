@@ -37,6 +37,9 @@ dependencies {
     implementation Dependencies.coroutineCore
     implementation Dependencies.coroutineAndroid
 
+    implementation Dependencies.sqlCipher
+    implementation Dependencies.sqlite
+
     // OkHttp
     api Dependencies.okHttp
     api Dependencies.interceptor

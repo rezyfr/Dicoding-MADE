@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:progressTint="@color/colorPrimary"
-            android:rating="@{movie.voteAverage.floatValue()}"
+            android:rating="@{movie.voteAverage.floatValue() / 2}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_title"
             tools:rating="4.5" />

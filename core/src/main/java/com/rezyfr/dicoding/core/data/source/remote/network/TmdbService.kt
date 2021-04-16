@@ -25,6 +25,6 @@ interface TmdbService {
 
     @GET("movie/{movie_id}")
     suspend fun getMovieDetail(
-        @Path("movie_id") movie_id: Int
+        @Path("movie_id") movieId: Int
     ): MovieDetailResponse
 }
