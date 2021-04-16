@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:dist="http://schemas.android.com/apk/distribution"
+<manifest xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.rezyfr.dicoding.favmovie">
 
     <dist:module
@@ -12,5 +11,4 @@
         <dist:fusing dist:include="false" />
     </dist:module>
 
-    <application android:fullBackupContent="@xml/backup_descriptor" />
 </manifest>
