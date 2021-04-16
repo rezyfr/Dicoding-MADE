@@ -12,17 +12,11 @@ object MappingHelper {
             val movie = Movie(
                 overview = it.overview,
                 originalLanguage = it.originalLanguage,
-                originalTitle = it.originalTitle,
-                video = it.video,
                 title = it.title,
-                genreIds = it.genreIds,
                 posterPath = it.posterPath,
-                backdropPath = it.backdropPath,
                 releaseDate = it.releaseDate,
-                popularity = it.popularity,
                 voteAverage = it.voteAverage,
                 id = it.id,
-                adult = it.adult,
                 voteCount = it.voteCount?.formatToK()
             )
             movieList.add(movie)

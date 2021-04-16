@@ -76,8 +76,26 @@ dependencies {
     androidTestImplementation Dependencies.hiltTest
 
     testImplementation Dependencies.junit
+    androidTestImplementation Dependencies.junit
     androidTestImplementation Dependencies.extJunit
     androidTestImplementation Dependencies.espresso
+    androidTestImplementation Dependencies.espressoContrib
+    androidTestImplementation Dependencies.testRule
+    implementation Dependencies.idlingResource
+    testImplementation Dependencies.mockitoCore
+    testImplementation Dependencies.mockitoInline
+    testImplementation Dependencies.mockitoKotlin
+    testImplementation Dependencies.coreTest
+    testImplementation Dependencies.mockk
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
+
+    // testImplementation for pure JVM unit tests
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.1"
+
+    // androidTestImplementation for Android instrumentation tests
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.1"
+
 
     //Leak Canary
     debugImplementation Dependencies.leakCanary

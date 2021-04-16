@@ -57,10 +57,15 @@ object Versions {
     const val sqlCipherVersion = "4.4.0"
     const val sqlVersion = "2.1.0"
 
-    const val mockkVersion = "1.10.0"
     const val junitVersion = "4.13"
     const val extJunitVersion = "1.1.2"
     const val espressoVersion = "3.3.0"
+    const val androidCoreTestVersion = "2.1.0"
+    const val androidTestVersion = "1.3.0"
+    const val mockitoVersion = "3.6.0"
+    const val mockitoKotlinVersion = "2.2.0"
+    const val idleResourceVersion = "3.3.0"
+    const val mockkVersion = "1.10.0"
 }
 
 object Dependencies {
@@ -132,8 +137,18 @@ object Dependencies {
     const val sqlite =  "androidx.sqlite:sqlite-ktx:${Versions.sqlVersion}"
 
     // Test
-    const val mockk = "io.mockk:mockk:${Versions.mockkVersion}"
     const val junit = "junit:junit:${Versions.junitVersion}"
     const val extJunit = "androidx.test.ext:junit:${Versions.extJunitVersion}"
     const val espresso = "androidx.test.espresso:espresso-core:${Versions.espressoVersion}"
+    const val espressoContrib =
+        "androidx.test.espresso:espresso-contrib:${Versions.espressoVersion}"
+    const val testRule = "androidx.test:rules:${Versions.androidTestVersion}"
+
+    const val mockk = "io.mockk:mockk:${Versions.mockkVersion}"
+    const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoVersion}"
+    const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockitoVersion}"
+    const val mockitoKotlin =
+        "com.nhaarman.mockitokotlin2:mockito-kotlin:${Versions.mockitoKotlinVersion}"
+    const val coreTest = "androidx.arch.core:core-testing:${Versions.androidCoreTestVersion}"
+    const val idlingResource = "androidx.test.espresso:espresso-idling-resource:${Versions.idleResourceVersion}"
 }
