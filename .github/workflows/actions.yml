@@ -34,7 +34,7 @@ jobs:
         run: ./gradlew lint
 
       - name: Unit Test with Android Emulator Runner
-        uses: ReactiveCircus/android-emulator-runner@v2.15
+        uses: ReactiveCircus/android-emulator-runner@v2.15.0
         with: 
             api-level: 29
             script: ./gradlew connectedCheck 
