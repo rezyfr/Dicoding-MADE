@@ -18,31 +18,31 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       - name: Set up our JDK environment
         uses: actions/setup-java@v1.4.3
         with:
           java-version: 1.8
-          
+
       - name: Run Kotlin Linter
         run: ./gradlew lint
 
       - name: Unit Test with Android Emulator Runner
         uses: ReactiveCircus/android-emulator-runner@v2.15.0
-        with: 
-            api-level: 29
-            script: ./gradlew connectedCheck 
+        with:
+          api-level: 29
+          script: ./gradlew connectedCheck
 
       - name: generate report
         uses: actions/upload-artifact@v2
         with:
-          name: report 
+          name: report
           path: app/build/reports/coverage/debug
 
       - name: Download Test Reports Folder
@@ -63,12 +63,12 @@ jobs:
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
           arguments: assembleRelease
-        
-      - name: Codecov
-        uses: codecov/codecov-action@v1.3.2
-        with:
-          # User defined upload name. Visible in Codecov UI
-          name: Dicoding-MADE
-          files: app/build/reports/coverage/debug/report.xml
-          # Specify the branch name
-          override_branch: main
+
+#      - name: Codecov
+#        uses: codecov/codecov-action@v1.3.2
+#        with:
+#          # User defined upload name. Visible in Codecov UI
+#          name: Dicoding-MADE
+#          files: app/build/reports/coverage/debug/report.xml,
+#          # Specify the branch name
+#          override_branch: main

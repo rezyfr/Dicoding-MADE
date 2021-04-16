@@ -24,6 +24,15 @@ android {
         exclude 'META-INF/LGPL2.1'
     }
     dynamicFeatures = [Modules.favorite]
+
+    testOptions {
+        unitTests.all {
+            jacoco {
+                includeNoLocationClasses = true
+            }
+        }
+        unitTests.returnDefaultValues = true
+    }
 }
 
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
