@@ -72,7 +72,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
             <TextView
-                android:id="@+id/textVoteCount"
+                android:id="@+id/tv_vote_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{@string/vote_count(movie.voteCount)}"
@@ -91,7 +91,7 @@
                 android:text="@{movie.duration}"
                 android:textColor="@color/lightGray"
                 android:textSize="12sp"
-                app:layout_constraintTop_toBottomOf="@+id/textVoteCount"
+                app:layout_constraintTop_toBottomOf="@+id/tv_vote_count"
                 tools:text="2 h 14 m" />
 
             <TextView

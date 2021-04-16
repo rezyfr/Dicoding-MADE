@@ -20,7 +20,7 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        val passPhrase: ByteArray = SQLiteDatabase.getBytes("submission".toCharArray())
+        private val passPhrase: ByteArray = SQLiteDatabase.getBytes("submission".toCharArray())
         val factory = SupportFactory(passPhrase)
 
         private fun buildDatabase(context: Context) =
