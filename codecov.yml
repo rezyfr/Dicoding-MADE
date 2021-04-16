@@ -1,7 +1,7 @@
 {
   "fixes": [
-#    - "debugAndroidTest/::app/src/test/java/"
-        "/home/runner/work/MADE-Submission/MADE-Submission>/::"
+    "debugAndroidTest/::app/src/test/java/",
+    "/home/runner/work/MADE-Submission/MADE-Submission>/::"
   ],
   "codecov": {
     "disable_default_path_fixes": true
