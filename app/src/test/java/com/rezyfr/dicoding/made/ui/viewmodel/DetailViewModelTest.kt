@@ -33,15 +33,12 @@ class DetailViewModelTest {
     private var viewModel: DetailViewModel? = null
     private var repo = mock(MovieRepository::class.java)
 
+    val movie = MutableLiveData<Movie>()
+    val detail = MovieItemDummy.getMovieDetail()
+
     @Before
     fun setUp() {
         viewModel = DetailViewModel(MovieInteractor(repo))
-    }
-
-    @Test
-    fun getMovieDetail() = coroutinesTestRule.testDispatcher.runBlockingTest {
-        val movie = MutableLiveData<Movie>()
-        val detail = MovieItemDummy.getMovieDetail()
         movie.value = Movie(
             detail.overview,
             detail.originalLanguage,
@@ -54,7 +51,10 @@ class DetailViewModelTest {
             detail.voteCount?.formatToK(),
             detail.runtime?.formatToHourMinutes()
         )
+    }
 
+    @Test
+    fun getMovieDetail() = coroutinesTestRule.testDispatcher.runBlockingTest {
         `when`(repo.getMovieDetail(detail.id!!)).thenReturn(flowOf(movie.value!!))
         val observer = mock(Observer::class.java)
         viewModel?.getMovieDetail(detail.id!!)
@@ -67,21 +67,6 @@ class DetailViewModelTest {
 
     @Test
     fun getWrongMovieDetail() = coroutinesTestRule.testDispatcher.runBlockingTest {
-        val movie = MutableLiveData<Movie>()
-        val detail = MovieItemDummy.getMovieDetail()
-        movie.value = Movie(
-            detail.overview,
-            detail.originalLanguage,
-            detail.title,
-            detail.posterPath,
-            detail.backdropPath,
-            detail.releaseDate,
-            detail.voteAverage,
-            detail.id,
-            detail.voteCount?.formatToK(),
-            detail.runtime?.formatToHourMinutes()
-        )
-
         `when`(repo.getMovieDetail(detail.id!!)).thenReturn(flowOf(movie.value!!))
         val observer = mock(Observer::class.java)
         viewModel?.getMovieDetail(0)
