@@ -33,9 +33,27 @@ jobs:
       - name: Run Kotlin Linter
         run: ./gradlew lint
 
-      - name: Run Unit Tests
-        run: ./gradlew test
-        
+      - name: Unit Test with Android Emulator Runner
+        uses: ReactiveCircus/android-emulator-runner@v2.14.3
+        with: 
+            api-level: 29
+            script: ./gradlew connectedCheck 
+
+      - name: generate report
+        uses: actions/upload-artifact@v2
+        with:
+          name: report 
+          path: app/build/reports/coverage/debug
+
+      - name: Download Test Reports Folder
+        uses: actions/download-artifact@v2
+        with:
+          name: report
+          path: app/build/reports/coverage/debug
+
+      - name: Upload Test Report
+        run:  bash <(curl -s https://codecov.io/bash) -f "app/build/reports/coverage/debug/report.xml"
+
       - name: Build all artifacts
         id: buildAllApks
         uses: eskatos/gradle-command-action@v1.3.3
@@ -45,15 +63,10 @@ jobs:
           dependencies-cache-enabled: true
           configuration-cache-enabled: true
           arguments: assembleRelease
-          
-      - name: Generate Coverage Report
-        run: ./gradlew createDebugCoverageReport
         
       - name: Codecov
         uses: codecov/codecov-action@v1.3.2
         with:
-          # Repository upload token - get it from codecov.io. Required only for private repositories
-          token: ee857b46-667a-48e9-a0c9-4e6d5791996c
           # User defined upload name. Visible in Codecov UI
           name: Dicoding-MADE
           files: app/build/reports/coverage/debug/report.xml
