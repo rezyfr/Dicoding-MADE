@@ -51,6 +51,10 @@ object Versions {
 
     const val timberVersion = "4.7.1"
 
+    const val lottieVersion = "3.6.0"
+    const val shimmerVersion = "0.5.0"
+    const val leakCanaryVersion = "2.6"
+
     const val mockkVersion = "1.10.0"
     const val junitVersion = "4.13"
     const val extJunitVersion = "1.1.2"
@@ -116,6 +120,11 @@ object Dependencies {
     const val interceptor =
         "com.squareup.okhttp3:logging-interceptor:${Versions.okHttpInterceptorVersion}"
     const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttpVersion}"
+
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanaryVersion}"
+
+    const val lottie = "com.airbnb.android:lottie:${Versions.lottieVersion}"
+    const val shimmer = "com.facebook.shimmer:shimmer:${Versions.shimmerVersion}"
 
     // Test
     const val mockk = "io.mockk:mockk:${Versions.mockkVersion}"

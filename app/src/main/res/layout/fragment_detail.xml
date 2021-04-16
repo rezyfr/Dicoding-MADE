@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -8,150 +10,111 @@
             type="com.rezyfr.dicoding.core.domain.model.Movie" />
     </data>
 
-    <androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorSecondary"
-        tools:context="com.example.movielist.ui.views.moviedetail.MovieDetailFragment">
+        android:layout_height="match_parent">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RelativeLayout
-                android:id="@+id/container_backdrop"
+            <ImageView
+                android:id="@+id/iv_poster"
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
+                android:layout_height="0dp"
+                android:contentDescription="@string/image_backdrop"
+                android:scaleType="centerCrop"
+                android:src="@color/colorSecondaryVariant"
+                app:imageUrl="@{movie.backdropImage}"
+                app:layout_constraintDimensionRatio="3:4"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <ImageView
-                    android:id="@+id/iv_backdrop"
-                    imageUrl="@{movie.backdropImage}"
-                    android:layout_width="match_parent"
-                    android:layout_height="300dp"
-                    android:contentDescription="@string/image_backdrop"
-                    android:scaleType="centerCrop" />
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/ic_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/button_back" />
 
-                <ImageButton
-                    android:id="@+id/btn_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:background="@drawable/ic_back"
-                    android:contentDescription="@string/button_back" />
-
-                <LinearLayout
-                    android:id="@+id/container_header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:orientation="vertical"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="0dp"
-                    android:paddingBottom="16dp">
-
-                    <TextView
-                        android:id="@+id/tv_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@{movie.title}"
-                        android:textColor="@color/white"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/tv_genre"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/white"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/tv_lang"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:text="@{movie.originalLanguage}"
-                            android:textColor="@color/white"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@{movie.title}"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@+id/iv_poster"
+                tools:text="Star Wars: IV" />
 
             <ImageButton
                 android:id="@+id/btn_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="276dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/ic_favorite_outlined"
-                android:contentDescription="@string/favorite_button" />
+                android:contentDescription="@string/favorite_button"
+                android:translationY="24dp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_poster"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <RatingBar
                 android:id="@+id/rating_bar"
                 style="?android:attr/ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btn_favorite"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="16dp"
-                android:isIndicator="true"
-                android:numStars="5"
-                android:progressTint="#FFD700"
-                android:rating="@{movie.voteAverage.floatValue()}" />
+                android:layout_marginStart="16dp"
+                android:rating="@{movie.voteAverage.floatValue()}"
+                android:progressTint="@color/colorPrimary"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/textVoteCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/vote_count(movie.voteCount)}"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/rating_bar"
+                app:layout_constraintStart_toEndOf="@+id/rating_bar"
+                app:layout_constraintTop_toTopOf="@+id/rating_bar"
+                tools:text="3.4k reviews" />
+
+            <TextView
+                android:id="@+id/tv_duration"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/container_backdrop"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@{movie.duration}"
+                android:textColor="@color/lightGray"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@+id/textVoteCount"
+                tools:text="2 h 14 m" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="0.5"
-                    android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="@{movie.releaseDate}"
+                android:textColor="@color/lightGray"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_duration"
+                tools:text="2019/12/31" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/release_date"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:text="@{movie.overview}"
+                app:layout_constraintTop_toBottomOf="@+id/tv_date"
+                tools:text="When it's discovered that the evil Emperor Palpatine did not die at the hands of Darth Vader, the rebels must race against the clock to find out his whereabouts. Finn and Poe lead the Resistance to put a stop to the First Order's plans to form a new Empire, while Rey anticipates her inevitable confrontation with Kylo Ren." />
 
-                    <TextView
-                        android:id="@+id/tv_date"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="@{movie.releaseDate}"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="@string/overview"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tv_overview"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@{movie.overview}"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-        </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

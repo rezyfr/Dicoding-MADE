@@ -33,4 +33,5 @@ class SearchViewModel @Inject constructor(private val movieUseCase: MovieUseCase
             movieUseCase.searchMovies(it)
         }.cachedIn(viewModelScope)
         .asLiveData()
+
 }

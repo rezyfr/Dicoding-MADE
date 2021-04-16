@@ -23,6 +23,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
 
     override val viewModel: SearchViewModel by viewModels()
     override fun layoutRes(): Int = R.layout.fragment_search
+    override fun getViewBinding() = FragmentSearchBinding.inflate(layoutInflater)
     private lateinit var searchPagingAdapter: SearchPagingAdapter
 
     override fun observeData() {
@@ -31,8 +32,6 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
                 if (it.toString().isNotEmpty()) {
                     searchPagingAdapter.submitData(it)
                     binding.rvSearch.visibility = View.VISIBLE
-                    binding.ivNoData.visibility = View.GONE
-                    binding.tvNoData.visibility = View.GONE
                 }
             }
         })
@@ -41,20 +40,21 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setAdapter()
-        binding.svMovie.isFocusable = true
-        binding.svMovie.isIconified = false
-        binding.svMovie.requestFocusFromTouch()
+        binding.apply {
+            svMovie.isFocusable = true
+            svMovie.isIconified = false
+            svMovie.requestFocusFromTouch()
+            svMovie.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return true
+                }
 
-        binding.svMovie.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return true
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                newText?.let { viewModel.setSearchQuery(it) }
-                return true
-            }
-        })
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    newText?.let { viewModel.setSearchQuery(it) }
+                    return true
+                }
+            })
+        }
     }
 
     private fun setAdapter() {
@@ -86,8 +86,12 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
     }
 
     private fun toMovieDetail(movie: Movie?) {
-        val bundle = Bundle()
-        bundle.putParcelable("movie", movie)
-        findNavController().navigate(R.id.detailFragment, bundle)
+        val action = SearchFragmentDirections.actionSearchFragmentToDetailFragment(movie?.id ?: 0)
+        findNavController().navigate(action)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding.rvSearch.adapter = null
     }
 }

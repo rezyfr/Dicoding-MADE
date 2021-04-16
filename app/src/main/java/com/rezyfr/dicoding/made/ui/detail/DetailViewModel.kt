@@ -8,6 +8,7 @@ import com.rezyfr.dicoding.core.domain.model.Movie
 import com.rezyfr.dicoding.core.domain.usecase.MovieUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -17,20 +18,30 @@ class DetailViewModel @Inject constructor(
     private val useCase: MovieUseCase
 ) : BaseViewModel() {
 
-    private val _isFavorited = MutableLiveData<Boolean>()
-    val isFavorited: LiveData<Boolean> = _isFavorited
+    private val _isFavorite = MutableLiveData<Boolean>()
+    val isFavorite: LiveData<Boolean> = _isFavorite
+    private var _movieDetail = MutableLiveData<Movie>()
+    val movieDetail: LiveData<Movie> = _movieDetail
+
+    fun getMovieDetail(id: Int) {
+        viewModelScope.launch {
+            useCase.getMovieDetail(id).collect {
+                _movieDetail.value = it
+            }
+        }
+    }
 
     fun addMovieToFavorite(movie: Movie) {
         viewModelScope.launch(Dispatchers.IO) {
             useCase.setFavoriteMovie(movie)
         }
-        _isFavorited.value = true
+        _isFavorite.value = true
     }
 
     fun checkIfFavorited(id: Int?) {
         viewModelScope.launch {
             val status = withContext(Dispatchers.IO) { useCase.checkIfMovieFavorited(id) }
-            _isFavorited.value = status
+            _isFavorite.value = status
         }
     }
 
@@ -38,6 +49,6 @@ class DetailViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             useCase.deleteMovieFromFavorite(id)
         }
-        _isFavorited.value = false
+        _isFavorite.value = false
     }
 }

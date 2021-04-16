@@ -2,7 +2,6 @@ package com.rezyfr.dicoding.core.data.source.remote
 
 import androidx.paging.PagingSource
 import com.rezyfr.dicoding.core.data.source.remote.network.TmdbService
-import com.rezyfr.dicoding.core.data.source.remote.response.MovieDetailResponse
 import com.rezyfr.dicoding.core.domain.model.Movie
 import com.rezyfr.dicoding.core.utils.MappingHelper
 import retrofit2.HttpException
@@ -11,18 +10,16 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class RemoteDataSource @Inject constructor(
+class PopularDataSource @Inject constructor(
     private val service: TmdbService
 ) : PagingSource<Int, Movie>() {
 
     private val firstPage = 1
-    var query: String = ""
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
         return try {
             val page = params.key ?: firstPage
-            val movieList = if (query.isNotEmpty()) service.searchMovie(query)
-            else service.discoverMovie(page)
+            val movieList = service.getMovieByType("popular", page)
 
             val data = movieList.results?.let { MappingHelper.mapMovieResponseToDomain(it) }
 
@@ -44,9 +41,5 @@ class RemoteDataSource @Inject constructor(
         } catch (exception: Exception) {
             LoadResult.Error(exception)
         }
-    }
-
-    suspend fun fetchMovieDetail(movieId: Int): MovieDetailResponse {
-        return service.getMovieDetail(movieId)
     }
 }

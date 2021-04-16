@@ -1,6 +1,7 @@
 package com.rezyfr.dicoding.core.utils
 
 import com.rezyfr.dicoding.core.data.source.local.entity.MovieEntity
+import com.rezyfr.dicoding.core.data.source.remote.response.MovieDetailResponse
 import com.rezyfr.dicoding.core.data.source.remote.response.MovieResponse
 import com.rezyfr.dicoding.core.domain.model.Movie
 
@@ -22,7 +23,7 @@ object MappingHelper {
                 voteAverage = it.voteAverage,
                 id = it.id,
                 adult = it.adult,
-                voteCount = it.voteCount
+                voteCount = it.voteCount?.formatToK()
             )
             movieList.add(movie)
         }
@@ -52,8 +53,24 @@ object MappingHelper {
                 voteAverage = it.voteAverage,
                 posterPath = it.posterPath,
                 releaseDate = it.releaseDate,
-                overview = it.overview
+                overview = it.overview,
+                duration = it.runtime
             )
         }
+    }
+
+    fun mapDetailResponseToDomain(input: MovieDetailResponse): Movie {
+        return Movie(
+            id = input.id,
+            title = input.title,
+            backdropPath = input.backdropPath,
+            originalLanguage = input.originalLanguage,
+            voteAverage = input.voteAverage,
+            voteCount = input.voteCount?.formatToK(),
+            posterPath = input.posterPath,
+            releaseDate = input.releaseDate,
+            overview = input.overview,
+            duration = input.runtime?.formatToHourMinutes()
+        )
     }
 }

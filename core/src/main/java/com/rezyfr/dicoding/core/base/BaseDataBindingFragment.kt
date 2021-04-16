@@ -6,28 +6,33 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.LayoutRes
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.viewbinding.ViewBinding
 import com.rezyfr.dicoding.core.R
 import com.rezyfr.dicoding.core.utils.hideLoadingDialog
+import com.rezyfr.dicoding.core.utils.loadingDialog
 import com.rezyfr.dicoding.core.utils.showLoadingDialog
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
-abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
+abstract class BaseDataBindingFragment<T : ViewDataBinding, VM : BaseViewModel> : Fragment() {
     @LayoutRes
     protected abstract fun layoutRes(): Int
     protected abstract val viewModel: VM
-    lateinit var binding: B
+
+    lateinit var binding: T
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = getViewBinding()
+        binding = DataBindingUtil.inflate(inflater, layoutRes(), container, false)
+        binding.lifecycleOwner = this
         observeData()
+
         return binding.root
     }
 
@@ -53,6 +58,7 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
         }
     }
 
+    abstract fun observeData()
 
     open fun handleLoading(isLoading: Boolean) {
         if (isLoading) context?.showLoadingDialog() else hideLoadingDialog()
@@ -64,6 +70,8 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
-    abstract fun observeData()
-    abstract fun getViewBinding(): B
+    override fun onDestroyView() {
+        super.onDestroyView()
+        loadingDialog = null
+    }
 }

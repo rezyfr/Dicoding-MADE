@@ -14,9 +14,6 @@ android {
         buildConfigField('String', 'IMAGE_URL', "\"https://image.tmdb.org/t/p/w200/\"")
         buildConfigField("String", "BACKDROP_URL", "\"https://image.tmdb.org/t/p/w500\"")
         buildConfigField("String", "API_KEY", "\"2cdf3a5c7cf412421485f89ace91e373\"")
-        buildConfigField("String", "YOUTUBE_URL", "\"https://www.youtube.com/watch?v=\"")
-        buildConfigField("String", "API_KEY", "\"2cdf3a5c7cf412421485f89ace91e373\"")
-        buildConfigField("String", "YOUTUBE_URL", "\"https://www.youtube.com/watch?v=\"")
     }
 
     buildTypes {
@@ -72,9 +69,15 @@ dependencies {
     implementation Dependencies.daggerHiltCompiler
     implementation Dependencies.timber
 
+    implementation Dependencies.lottie
+    implementation Dependencies.shimmer
+
     androidTestImplementation Dependencies.hiltTest
 
     testImplementation Dependencies.junit
     androidTestImplementation Dependencies.extJunit
     androidTestImplementation Dependencies.espresso
+
+    //Leak Canary
+    debugImplementation Dependencies.leakCanary
 }
