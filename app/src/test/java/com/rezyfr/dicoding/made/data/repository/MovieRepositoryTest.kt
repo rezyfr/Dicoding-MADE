@@ -5,6 +5,7 @@ import com.rezyfr.dicoding.core.data.source.local.entity.MovieEntity
 import com.rezyfr.dicoding.core.data.source.remote.NowPlayingDataSource
 import com.rezyfr.dicoding.core.data.source.remote.PopularDataSource
 import com.rezyfr.dicoding.core.data.source.remote.RemoteDataSource
+import com.rezyfr.dicoding.core.data.source.repository.MovieRepository
 import com.rezyfr.dicoding.made.utils.CoroutineTestRule
 import com.rezyfr.dicoding.made.utils.MovieItemDummy
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -28,7 +29,7 @@ class AcademyRepositoryTest {
     private val nowPlayingDataSource = Mockito.mock(NowPlayingDataSource::class.java)
     private val remoteDataSource = Mockito.mock(RemoteDataSource::class.java)
     private val localDataSource = Mockito.mock(LocalDataSource::class.java)
-    private val repo = FakeMovieRepository(
+    private val repo = MovieRepository(
         popularDataSource,
         nowPlayingDataSource,
         remoteDataSource,
