@@ -6,6 +6,7 @@
     android:background="@color/colorSecondary">
 
     <ImageView
+        android:id="@+id/img_splashscreen"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:contentDescription="@string/cd_splash"

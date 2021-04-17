@@ -4,7 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.rezyfr.dicoding.core.data.source.repository.MovieRepository
 import com.rezyfr.dicoding.core.domain.usecase.MovieInteractor
 import com.rezyfr.dicoding.made.ui.home.HomeViewModel
-import com.rezyfr.dicoding.made.ui.utils.CoroutineTestRule
+import com.rezyfr.dicoding.made.utils.CoroutineTestRule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import org.junit.Rule
 import org.mockito.Mockito

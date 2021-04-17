@@ -9,8 +9,8 @@ import com.rezyfr.dicoding.core.domain.usecase.MovieInteractor
 import com.rezyfr.dicoding.core.utils.formatToHourMinutes
 import com.rezyfr.dicoding.core.utils.formatToK
 import com.rezyfr.dicoding.made.ui.detail.DetailViewModel
-import com.rezyfr.dicoding.made.ui.utils.CoroutineTestRule
-import com.rezyfr.dicoding.made.ui.utils.MovieItemDummy
+import com.rezyfr.dicoding.made.utils.CoroutineTestRule
+import com.rezyfr.dicoding.made.utils.MovieItemDummy
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertNotSame
 import kotlinx.coroutines.ExperimentalCoroutinesApi

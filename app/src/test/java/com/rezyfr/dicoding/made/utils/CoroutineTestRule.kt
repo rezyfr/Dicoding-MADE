@@ -1,6 +1,5 @@
-package com.rezyfr.dicoding.made.ui.utils
+package com.rezyfr.dicoding.made.utils
 
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
