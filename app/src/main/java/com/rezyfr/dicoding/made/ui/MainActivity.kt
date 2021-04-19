@@ -37,4 +37,7 @@ class MainActivity : BaseActivity<BaseViewModel, ActivityMainBinding>() {
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
+    override fun onBackPressed() {
+        finishAfterTransition()
+    }
 }
