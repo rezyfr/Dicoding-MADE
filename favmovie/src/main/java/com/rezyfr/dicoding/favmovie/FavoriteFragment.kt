@@ -28,9 +28,9 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
         viewModel.favoriteFlow.observe(this, {
             if (it.isNotEmpty()) {
                 favoriteAdapter.setData(it)
-                binding.rvSearch.visibility = View.VISIBLE
-                binding.ivNoData.visibility = View.GONE
-                binding.tvNoData.visibility = View.GONE
+                binding?.rvSearch?.visibility = View.VISIBLE
+                binding?.ivNoData?.visibility = View.GONE
+                binding?.tvNoData?.visibility = View.GONE
             }
         })
     }
@@ -56,7 +56,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
         favoriteAdapter.onItemClick = {
             toMovieDetail(it)
         }
-        binding.rvSearch.adapter = favoriteAdapter
+        binding?.rvSearch?.adapter = favoriteAdapter
     }
 
 
@@ -65,5 +65,10 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
             val action = FavoriteFragmentDirections.actionFavoriteFragmentToDetailFragment(movie.id ?: 0)
             findNavController().navigate(action)
         }
+    }
+
+    override fun cleanUp() {
+        binding?.rvSearch?.adapter = null
+        binding = null
     }
 }

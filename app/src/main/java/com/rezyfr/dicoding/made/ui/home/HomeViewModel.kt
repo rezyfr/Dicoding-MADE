@@ -14,7 +14,6 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(private val movieUseCase: MovieUseCase) : BaseViewModel() {
 
-
     private lateinit var _popularMovies: LiveData<PagingData<Movie>>
     val popularMovies: LiveData<PagingData<Movie>>
         get() = _popularMovies
@@ -35,5 +34,10 @@ class HomeViewModel @Inject constructor(private val movieUseCase: MovieUseCase) 
     private fun getNowPlayingMovies() {
         _nowPlayingMovies =
             movieUseCase.discoverNowPlayingMovies().cachedIn(viewModelScope).asLiveData()
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+
     }
 }

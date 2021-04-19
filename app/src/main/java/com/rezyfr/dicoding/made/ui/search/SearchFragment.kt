@@ -31,7 +31,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
             lifecycleScope.launch {
                 if (it.toString().isNotEmpty()) {
                     searchPagingAdapter.submitData(it)
-                    binding.rvSearch.visibility = View.VISIBLE
+                    binding?.rvSearch?.visibility = View.VISIBLE
                 }
             }
         })
@@ -40,7 +40,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setAdapter()
-        binding.apply {
+        binding?.apply {
             svMovie.isFocusable = true
             svMovie.isIconified = false
             svMovie.requestFocusFromTouch()
@@ -62,7 +62,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
         searchPagingAdapter.onItemClick = {
             toMovieDetail(it)
         }
-        binding.rvSearch.adapter = searchPagingAdapter
+        binding?.rvSearch?.adapter = searchPagingAdapter
 
         searchPagingAdapter.addLoadStateListener { loadState ->
             if (loadState.refresh is LoadState.Loading ||
@@ -90,8 +90,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
         findNavController().navigate(action)
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding.rvSearch.adapter = null
+    override fun cleanUp() {
+        binding?.rvSearch?.adapter = null
+        binding?.svMovie?.setOnQueryTextListener(null)
     }
 }

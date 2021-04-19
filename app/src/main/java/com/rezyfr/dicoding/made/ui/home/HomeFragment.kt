@@ -149,6 +149,5 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
         binding.rvPopular.adapter = null
         binding.scrollView.removeAllViewsInLayout()
         binding.scrollView.removeAllViews()
-        binding.invalidateAll()
     }
 }

@@ -19,7 +19,7 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
     @LayoutRes
     protected abstract fun layoutRes(): Int
     protected abstract val viewModel: VM
-    lateinit var binding: B
+    var binding: B? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -28,7 +28,7 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
     ): View? {
         binding = getViewBinding()
         observeData()
-        return binding.root
+        return binding?.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -53,7 +53,6 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
         }
     }
 
-
     open fun handleLoading(isLoading: Boolean) {
         if (isLoading) context?.showLoadingDialog() else hideLoadingDialog()
     }
@@ -64,6 +63,13 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        cleanUp()
+        binding = null
+    }
+
     abstract fun observeData()
     abstract fun getViewBinding(): B
+    abstract fun cleanUp()
 }
