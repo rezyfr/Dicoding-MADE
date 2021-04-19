@@ -64,12 +64,12 @@ jobs:
           configuration-cache-enabled: true
           arguments: assembleRelease
 
-      - name: Codecov
-        uses: codecov/codecov-action@v1.3.2
-        with:
-          # User defined upload name. Visible in Codecov UI
-          name: Dicoding-MADE
-          token: 0baf2d76-8d63-474b-8071-74b354a4ce47
-          files: app/build/reports/coverage/debug/report.xml,
-          # Specify the branch name
-          override_branch: main
+#      - name: Codecov
+#        uses: codecov/codecov-action@v1.3.2
+#        with:
+#          # User defined upload name. Visible in Codecov UI
+#          name: Dicoding-MADE
+#          token: 0baf2d76-8d63-474b-8071-74b354a4ce47
+#          files: app/build/reports/coverage/debug/report.xml,
+#          # Specify the branch name
+#          override_branch: main

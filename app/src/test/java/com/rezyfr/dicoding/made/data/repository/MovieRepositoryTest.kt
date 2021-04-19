@@ -61,4 +61,25 @@ class AcademyRepositoryTest {
             assertEquals(movie.size, it.size)
         }
     }
+
+    fun check(arr: IntArray, k: Int): Boolean {
+        for (`val` in arr) {
+            if (`val` != 0 && `val` != k) return false
+        }
+        return true
+    }
+
+    fun perfectSubstring(s: String, k: Int): Int {
+        var res = 0
+        for (i in 0 until s.length) {
+            val arr = IntArray(10)
+            for (j in i until s.length) {
+                if (j > i + 10 * k) break
+                val ch = s[j]
+                arr[ch - '0']++
+                if (check(arr, k)) res++
+            }
+        }
+        return res
+    }
 }

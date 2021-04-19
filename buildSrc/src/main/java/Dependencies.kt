@@ -51,8 +51,6 @@ object Versions {
 
     const val timberVersion = "4.7.1"
 
-    const val lottieVersion = "3.6.0"
-    const val shimmerVersion = "0.5.0"
     const val leakCanaryVersion = "2.6"
     const val sqlCipherVersion = "4.4.0"
     const val sqlVersion = "2.1.0"
@@ -65,7 +63,6 @@ object Versions {
     const val mockitoVersion = "3.6.0"
     const val mockitoKotlinVersion = "2.2.0"
     const val idleResourceVersion = "3.3.0"
-    const val mockkVersion = "1.10.0"
 }
 
 object Dependencies {
@@ -130,9 +127,6 @@ object Dependencies {
 
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanaryVersion}"
 
-    const val lottie = "com.airbnb.android:lottie:${Versions.lottieVersion}"
-    const val shimmer = "com.facebook.shimmer:shimmer:${Versions.shimmerVersion}"
-
     const val sqlCipher =  "net.zetetic:android-database-sqlcipher:${Versions.sqlCipherVersion}"
     const val sqlite =  "androidx.sqlite:sqlite-ktx:${Versions.sqlVersion}"
 
@@ -144,7 +138,6 @@ object Dependencies {
         "androidx.test.espresso:espresso-contrib:${Versions.espressoVersion}"
     const val testRule = "androidx.test:rules:${Versions.androidTestVersion}"
 
-    const val mockk = "io.mockk:mockk:${Versions.mockkVersion}"
     const val mockitoCore = "org.mockito:mockito-core:${Versions.mockitoVersion}"
     const val mockitoInline = "org.mockito:mockito-inline:${Versions.mockitoVersion}"
     const val mockitoKotlin =
