@@ -150,4 +150,8 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
         binding.scrollView.removeAllViewsInLayout()
         binding.scrollView.removeAllViews()
     }
+
+    override fun onBackPressed() {
+        requireActivity().finishAfterTransition()
+    }
 }

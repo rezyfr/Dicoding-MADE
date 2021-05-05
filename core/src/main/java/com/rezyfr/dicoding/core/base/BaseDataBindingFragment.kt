@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -24,6 +25,11 @@ abstract class BaseDataBindingFragment<T : ViewDataBinding, VM : BaseViewModel> 
 
     lateinit var binding: T
 
+    private val backPressedDispatcher = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            this@BaseDataBindingFragment.onBackPressed()
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,6 +42,10 @@ abstract class BaseDataBindingFragment<T : ViewDataBinding, VM : BaseViewModel> 
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, backPressedDispatcher)
+    }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.apply {
@@ -74,4 +84,6 @@ abstract class BaseDataBindingFragment<T : ViewDataBinding, VM : BaseViewModel> 
         super.onDestroyView()
         loadingDialog = null
     }
+
+    abstract fun onBackPressed()
 }

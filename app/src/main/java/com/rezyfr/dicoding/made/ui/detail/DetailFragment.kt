@@ -60,4 +60,7 @@ class DetailFragment : BaseDataBindingFragment<FragmentDetailBinding, DetailView
             else ContextCompat.getDrawable(requireContext(), R.drawable.ic_favorite_outlined)
     }
 
+    override fun onBackPressed() {
+        findNavController().navigateUp()
+    }
 }

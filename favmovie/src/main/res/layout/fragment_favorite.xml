@@ -4,8 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@color/colorSecondary">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_fav"

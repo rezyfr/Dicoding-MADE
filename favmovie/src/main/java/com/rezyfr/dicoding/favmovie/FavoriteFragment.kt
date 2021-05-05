@@ -71,4 +71,8 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
         binding?.rvSearch?.adapter = null
         binding = null
     }
+
+    override fun onBackPressed() {
+        findNavController().navigateUp()
+    }
 }

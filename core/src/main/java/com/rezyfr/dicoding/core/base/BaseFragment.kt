@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
@@ -20,6 +21,12 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
     protected abstract fun layoutRes(): Int
     protected abstract val viewModel: VM
     var binding: B? = null
+
+    private val backPressedDispatcher = object : OnBackPressedCallback(true) {
+        override fun handleOnBackPressed() {
+            this@BaseFragment.onBackPressed()
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,6 +60,11 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
         }
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, backPressedDispatcher)
+    }
+
     open fun handleLoading(isLoading: Boolean) {
         if (isLoading) context?.showLoadingDialog() else hideLoadingDialog()
     }
@@ -66,9 +78,11 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         cleanUp()
+        backPressedDispatcher.remove()
         binding = null
     }
 
+    abstract fun onBackPressed()
     abstract fun observeData()
     abstract fun getViewBinding(): B
     abstract fun cleanUp()

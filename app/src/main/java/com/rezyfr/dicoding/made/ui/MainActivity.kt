@@ -36,8 +36,4 @@ class MainActivity : BaseActivity<BaseViewModel, ActivityMainBinding>() {
         val navController = findNavController(R.id.main_nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
-
-    override fun onBackPressed() {
-        finishAfterTransition()
-    }
 }

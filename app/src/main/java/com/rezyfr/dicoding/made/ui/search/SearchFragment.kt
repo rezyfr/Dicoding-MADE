@@ -94,4 +94,8 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
         binding?.rvSearch?.adapter = null
         binding?.svMovie?.setOnQueryTextListener(null)
     }
+
+    override fun onBackPressed() {
+        findNavController().navigateUp()
+    }
 }
