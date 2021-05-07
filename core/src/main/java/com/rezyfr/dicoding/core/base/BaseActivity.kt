@@ -18,12 +18,12 @@ abstract class BaseActivity<VM : BaseViewModel, B : ViewBinding> : AppCompatActi
     protected abstract fun contentView(): Int
     protected abstract val viewModel: VM
     protected abstract fun setupView()
-    lateinit var binding: B
+    var binding: B? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = getViewBinding()
-        setContentView(binding.root)
+        setContentView(binding?.root)
         setupView()
         observeErrorEvent()
     }

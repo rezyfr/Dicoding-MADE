@@ -37,7 +37,7 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
     }
 
     private fun setToolbar() {
-        binding.toolbarMain.apply {
+        binding?.toolbarMain?.apply {
             setOnMenuItemClickListener {
                 when (it.itemId) {
                     R.id.menu_search -> {
@@ -88,7 +88,7 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
         popularMoviesAdapter.addLoadStateListener { loadState ->
             loadStateListener(loadState)
         }
-        binding.rvPopular.adapter = popularMoviesAdapter
+        binding?.rvPopular?.adapter = popularMoviesAdapter
 
         nowPlayingMoviesAdapter = HomePagingAdapter()
         nowPlayingMoviesAdapter.onItemClick = {
@@ -97,7 +97,7 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
         nowPlayingMoviesAdapter.addLoadStateListener { loadState ->
             loadStateListener(loadState)
         }
-        binding.rvNowplaying.adapter = nowPlayingMoviesAdapter
+        binding?.rvNowplaying?.adapter = nowPlayingMoviesAdapter
     }
 
     private fun loadStateListener(loadState: CombinedLoadStates) {
@@ -127,13 +127,13 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
     }
 
     private fun observePopularList(list: PagingData<Movie>) {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             popularMoviesAdapter.submitData(list)
         }
     }
 
     private fun observeNowPlayingList(list: PagingData<Movie>) {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             nowPlayingMoviesAdapter.submitData(list)
         }
     }
@@ -145,10 +145,10 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding.rvNowplaying.adapter = null
-        binding.rvPopular.adapter = null
-        binding.scrollView.removeAllViewsInLayout()
-        binding.scrollView.removeAllViews()
+        binding?.rvNowplaying?.adapter = null
+        binding?.rvPopular?.adapter = null
+        binding?.scrollView?.removeAllViewsInLayout()
+        binding?.scrollView?.removeAllViews()
     }
 
     override fun onBackPressed() {

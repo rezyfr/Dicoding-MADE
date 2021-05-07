@@ -23,7 +23,7 @@ abstract class BaseDataBindingFragment<T : ViewDataBinding, VM : BaseViewModel> 
     protected abstract fun layoutRes(): Int
     protected abstract val viewModel: VM
 
-    lateinit var binding: T
+    var binding: T? = null
 
     private val backPressedDispatcher = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
@@ -36,10 +36,10 @@ abstract class BaseDataBindingFragment<T : ViewDataBinding, VM : BaseViewModel> 
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, layoutRes(), container, false)
-        binding.lifecycleOwner = this
+        binding?.lifecycleOwner = this
         observeData()
 
-        return binding.root
+        return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -83,6 +83,7 @@ abstract class BaseDataBindingFragment<T : ViewDataBinding, VM : BaseViewModel> 
     override fun onDestroyView() {
         super.onDestroyView()
         loadingDialog = null
+        binding = null
     }
 
     abstract fun onBackPressed()

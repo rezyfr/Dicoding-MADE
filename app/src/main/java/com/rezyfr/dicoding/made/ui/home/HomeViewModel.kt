@@ -35,9 +35,4 @@ class HomeViewModel @Inject constructor(private val movieUseCase: MovieUseCase) 
         _nowPlayingMovies =
             movieUseCase.discoverNowPlayingMovies().cachedIn(viewModelScope).asLiveData()
     }
-
-    override fun onCleared() {
-        super.onCleared()
-
-    }
 }

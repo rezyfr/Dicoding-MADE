@@ -29,11 +29,16 @@ class MainActivity : BaseActivity<BaseViewModel, ActivityMainBinding>() {
     }
 
     private fun setupToolbar() {
-        setSupportActionBar(binding.toolbarMain)
+        setSupportActionBar(binding?.toolbarMain)
     }
 
     private fun setupNavigation() {
         val navController = findNavController(R.id.main_nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
     }
 }

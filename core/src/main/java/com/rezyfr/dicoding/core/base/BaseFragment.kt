@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.rezyfr.dicoding.core.R
 import com.rezyfr.dicoding.core.utils.hideLoadingDialog
+import com.rezyfr.dicoding.core.utils.loadingDialog
 import com.rezyfr.dicoding.core.utils.showLoadingDialog
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -79,6 +80,7 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
         super.onDestroyView()
         cleanUp()
         backPressedDispatcher.remove()
+        loadingDialog = null
         binding = null
     }
 

@@ -22,7 +22,7 @@ class DetailFragment : BaseDataBindingFragment<FragmentDetailBinding, DetailView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply {
+        binding?.apply {
             arguments?.let {
                 movieId = DetailFragmentArgs.fromBundle(it).movieId
             }
@@ -30,7 +30,7 @@ class DetailFragment : BaseDataBindingFragment<FragmentDetailBinding, DetailView
             viewModel.checkIfFavorited(movieId)
 
             btnFavorite.setOnClickListener {
-                movie?.let {
+                this.movie?.let {
                     if (isFavorite) viewModel.deleteFromFavorite(movieId)
                     else viewModel.addMovieToFavorite(it)
                 }
@@ -47,12 +47,12 @@ class DetailFragment : BaseDataBindingFragment<FragmentDetailBinding, DetailView
     }
 
     private fun getMovieDetail(movie: Movie) {
-        binding.movie = movie
+        binding?.movie = movie
     }
 
     private fun checkIsFavorite(isFavorite: Boolean) {
         this.isFavorite = isFavorite
-        binding.btnFavorite.background =
+        binding?.btnFavorite?.background =
             if (isFavorite) ContextCompat.getDrawable(
                 requireContext(),
                 R.drawable.ic_favorite_filled
