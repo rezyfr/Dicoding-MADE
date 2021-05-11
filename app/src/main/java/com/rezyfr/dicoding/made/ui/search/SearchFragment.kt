@@ -28,7 +28,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
 
     override fun observeData() {
         viewModel.searchResult.observe(viewLifecycleOwner, {
-            lifecycleScope.launch {
+            viewLifecycleOwner.lifecycleScope.launch {
                 if (it.toString().isNotEmpty()) {
                     searchPagingAdapter.submitData(it)
                     binding?.rvSearch?.visibility = View.VISIBLE
