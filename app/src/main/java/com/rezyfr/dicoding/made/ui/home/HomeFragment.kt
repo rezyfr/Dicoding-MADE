@@ -1,6 +1,9 @@
 package com.rezyfr.dicoding.made.ui.home
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -29,11 +32,44 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
     private lateinit var popularMoviesAdapter: HomePagingAdapter
     private lateinit var nowPlayingMoviesAdapter: HomePagingAdapter
 
+    private lateinit var broadcastReceiver: BroadcastReceiver
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setToolbar()
         setAdapter()
+    }
+
+    private fun registerBroadCastReceiver() {
+        broadcastReceiver = object : BroadcastReceiver() {
+            override fun onReceive(context: Context, intent: Intent) {
+                when (intent.action) {
+                    Intent.ACTION_POWER_CONNECTED -> {
+                        Toast.makeText(requireContext(), "Power Connected", Toast.LENGTH_SHORT).show()
+                    }
+                    Intent.ACTION_POWER_DISCONNECTED -> {
+                        Toast.makeText(requireContext(), "Power Disconnected", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+        val intentFilter = IntentFilter()
+        intentFilter.apply {
+            addAction(Intent.ACTION_POWER_CONNECTED)
+            addAction(Intent.ACTION_POWER_DISCONNECTED)
+        }
+        requireActivity().registerReceiver(broadcastReceiver, intentFilter)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        registerBroadCastReceiver()
+    }
+
+    override fun onStop() {
+        super.onStop()
+//        requireActivity().unregisterReceiver(broadcastReceiver)
     }
 
     private fun setToolbar() {

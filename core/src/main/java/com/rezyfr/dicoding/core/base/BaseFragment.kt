@@ -78,10 +78,10 @@ abstract class BaseFragment<B : ViewBinding, VM : BaseViewModel> : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        cleanUp()
-        backPressedDispatcher.remove()
-        loadingDialog = null
-        binding = null
+//        cleanUp()
+//        backPressedDispatcher.remove()
+//        loadingDialog = null
+//        binding = null
     }
 
     abstract fun onBackPressed()

@@ -82,8 +82,8 @@ abstract class BaseDataBindingFragment<T : ViewDataBinding, VM : BaseViewModel> 
 
     override fun onDestroyView() {
         super.onDestroyView()
-        loadingDialog = null
-        binding = null
+//        loadingDialog = null
+//        binding = null
     }
 
     abstract fun onBackPressed()
