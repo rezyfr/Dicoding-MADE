@@ -21,7 +21,7 @@ object Modules {
 }
 
 object Versions {
-    const val kotlinVersion = "1.4.32"
+    const val kotlinVersion = "1.5.10"
     const val coreKtxVersion = "1.3.2"
     const val appCompatVersion = "1.2.0"
     const val materialVersion = "1.3.0"
@@ -34,7 +34,7 @@ object Versions {
     const val lifecycleKtxVersion = "2.3.1"
 
     const val hiltVersion = "1.0.0-alpha03"
-    const val daggerHiltVersion = "2.32-alpha"
+    const val daggerHiltVersion = "2.37"
 
     const val coroutineVersion = "1.4.1"
     const val roomVersion = "2.2.6"
@@ -82,9 +82,6 @@ object Dependencies {
         "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycleKtxVersion}"
 
     // hilt
-    const val hilt = "androidx.hilt:hilt-common:${Versions.hiltVersion}"
-    const val hiltViewModel = "androidx.hilt:hilt-lifecycle-viewmodel:${Versions.hiltVersion}"
-    const val hiltCompiler = "androidx.hilt:hilt-compiler:${Versions.hiltVersion}" //kapt
     const val daggerHiltAndroid = "com.google.dagger:hilt-android:${Versions.daggerHiltVersion}"
     const val daggerHiltCompiler = "com.google.dagger:hilt-compiler:${Versions.daggerHiltVersion}"
     const val hiltTest =

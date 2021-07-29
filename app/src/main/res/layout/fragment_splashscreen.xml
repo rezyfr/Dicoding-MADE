@@ -4,15 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
+    <androidx.compose.ui.platform.ComposeView
         android:id="@+id/img_splashscreen"
         android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:contentDescription="@string/cd_splash"
-        android:src="@drawable/img_movie"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="100dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

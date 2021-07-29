@@ -18,6 +18,6 @@ interface MovieDao : BaseDao<MovieEntity> {
     @Query("DELETE FROM movie WHERE id = :id")
     fun deleteFavoriteMoviesById(id: Int?)
 
-    @Query("SELECT EXISTS (SELECT 1 FROM movie WHERE id = :id AND isFavorite = 1)")
+    @Query("SELECT EXISTS (SELECT 1 FROM movie WHERE id = :id AND favorite = 1)")
     fun isFavorite(id: Int?): Boolean
 }

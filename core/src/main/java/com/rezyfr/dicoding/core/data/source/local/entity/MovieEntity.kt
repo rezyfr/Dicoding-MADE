@@ -16,5 +16,5 @@ data class MovieEntity(
     var voteCount: String? = null,
     var runtime: String? = null,
     var overview: String? = null,
-    var isFavorite: Int? = 0
+    var favorite: Int? = 0
 )

@@ -15,7 +15,7 @@ class LocalDataSource @Inject constructor(private val movieDao: MovieDao) {
     }
 
     fun insertFavoriteMovie(movie: MovieEntity) {
-        movie.isFavorite = 1
+        movie.favorite = 1
         movieDao.insert(movie)
     }
 
