@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.paging.CombinedLoadStates
@@ -29,7 +30,7 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
 
     override fun layoutRes(): Int = R.layout.fragment_home
     override val viewModel: HomeViewModel by viewModels()
-    private lateinit var popularMoviesAdapter: HomePagingAdapter
+    private lateinit var upcomingMoviesAdapter: HomePagingAdapter
     private lateinit var nowPlayingMoviesAdapter: HomePagingAdapter
 
     private lateinit var broadcastReceiver: BroadcastReceiver
@@ -117,14 +118,14 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
     }
 
     private fun setAdapter() {
-        popularMoviesAdapter = HomePagingAdapter()
-        popularMoviesAdapter.onItemClick = {
+        upcomingMoviesAdapter = HomePagingAdapter()
+        upcomingMoviesAdapter.onItemClick = {
             toMovieDetail(it)
         }
-        popularMoviesAdapter.addLoadStateListener { loadState ->
+        upcomingMoviesAdapter.addLoadStateListener { loadState ->
             loadStateListener(loadState)
         }
-        binding?.rvPopular?.adapter = popularMoviesAdapter
+        binding?.rvUpcoming?.adapter = upcomingMoviesAdapter
 
         nowPlayingMoviesAdapter = HomePagingAdapter()
         nowPlayingMoviesAdapter.onItemClick = {
@@ -133,7 +134,7 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
         nowPlayingMoviesAdapter.addLoadStateListener { loadState ->
             loadStateListener(loadState)
         }
-        binding?.rvNowplaying?.adapter = nowPlayingMoviesAdapter
+        binding?.rvPopular?.adapter = nowPlayingMoviesAdapter
     }
 
     private fun loadStateListener(loadState: CombinedLoadStates) {
@@ -158,17 +159,17 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
     }
 
     override fun observeData() {
-        viewModel.popularMovies.observe(viewLifecycleOwner, ::observePopularList)
-        viewModel.nowPlayingMovies.observe(viewLifecycleOwner, ::observeNowPlayingList)
+//        viewModel.upcomingMovies.asLiveData().observe(viewLifecycleOwner, ::observeUpcomingList)
+//        viewModel.nowPlayingMovies.asLiveData().observe(viewLifecycleOwner, ::observePopularList)
     }
 
     private fun observePopularList(list: PagingData<Movie>) {
         viewLifecycleOwner.lifecycleScope.launch {
-            popularMoviesAdapter.submitData(list)
+            upcomingMoviesAdapter.submitData(list)
         }
     }
 
-    private fun observeNowPlayingList(list: PagingData<Movie>) {
+    private fun observeUpcomingList(list: PagingData<Movie>) {
         viewLifecycleOwner.lifecycleScope.launch {
             nowPlayingMoviesAdapter.submitData(list)
         }
@@ -181,8 +182,8 @@ class HomeFragment : BaseDataBindingFragment<FragmentHomeBinding, HomeViewModel>
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding?.rvNowplaying?.adapter = null
         binding?.rvPopular?.adapter = null
+        binding?.rvUpcoming?.adapter = null
         binding?.scrollView?.removeAllViewsInLayout()
         binding?.scrollView?.removeAllViews()
     }

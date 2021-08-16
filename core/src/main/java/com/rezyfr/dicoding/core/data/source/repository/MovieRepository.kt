@@ -4,8 +4,8 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.rezyfr.dicoding.core.data.source.local.LocalDataSource
-import com.rezyfr.dicoding.core.data.source.remote.NowPlayingDataSource
 import com.rezyfr.dicoding.core.data.source.remote.PopularDataSource
+import com.rezyfr.dicoding.core.data.source.remote.TopRatedDataSource
 import com.rezyfr.dicoding.core.data.source.remote.RemoteDataSource
 import com.rezyfr.dicoding.core.domain.model.Movie
 import com.rezyfr.dicoding.core.domain.repository.IMovieRepository
@@ -20,23 +20,23 @@ import javax.inject.Singleton
 
 @Singleton
 class MovieRepository @Inject constructor(
-    private val popularDataSource: PopularDataSource,
-    private val nowPlayingDataSource: NowPlayingDataSource,
+    private val topRatedDataSource: TopRatedDataSource,
+    private val popularDatasource: PopularDataSource,
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
 ) : IMovieRepository {
 
-    override fun discoverNowPlayingMovies(): Flow<PagingData<Movie>> {
+    override fun discoverTopRatedMovies(): Flow<PagingData<Movie>> {
         return Pager(
             PagingConfig(pageSize = 3),
-            pagingSourceFactory = { nowPlayingDataSource }
+            pagingSourceFactory = { topRatedDataSource }
         ).flow
     }
 
     override fun discoverPopularMovies(): Flow<PagingData<Movie>> {
         return Pager(
             PagingConfig(pageSize = 3),
-            pagingSourceFactory = { popularDataSource }
+            pagingSourceFactory = { popularDatasource }
         ).flow
     }
 

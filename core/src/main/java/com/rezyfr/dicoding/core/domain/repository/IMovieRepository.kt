@@ -5,7 +5,7 @@ import com.rezyfr.dicoding.core.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 
 interface IMovieRepository {
-    fun discoverNowPlayingMovies(): Flow<PagingData<Movie>>
+    fun discoverTopRatedMovies(): Flow<PagingData<Movie>>
     fun discoverPopularMovies(): Flow<PagingData<Movie>>
     fun searchMovies(query: String): Flow<PagingData<Movie>>
     suspend fun setFavoriteMovie(movie: Movie)

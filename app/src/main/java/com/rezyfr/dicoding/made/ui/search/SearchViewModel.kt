@@ -8,10 +8,12 @@ import com.rezyfr.dicoding.core.domain.usecase.MovieUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 import kotlinx.coroutines.channels.ConflatedBroadcastChannel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
+@ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
 @HiltViewModel
 class SearchViewModel @Inject constructor(private val movieUseCase: MovieUseCase) :
@@ -20,7 +22,7 @@ class SearchViewModel @Inject constructor(private val movieUseCase: MovieUseCase
     private val queryChannel = ConflatedBroadcastChannel<String>()
 
     fun setSearchQuery(search: String) {
-        queryChannel.offer(search)
+        queryChannel.trySend(search).isSuccess
     }
 
     @FlowPreview

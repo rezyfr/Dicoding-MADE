@@ -8,7 +8,6 @@ import androidx.compose.ui.graphics.compositeOver
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
-import com.example.compose.rally.ui.theme.ColorPalette
 
 @Composable
 fun MovieTheme(content: @Composable () -> Unit) {

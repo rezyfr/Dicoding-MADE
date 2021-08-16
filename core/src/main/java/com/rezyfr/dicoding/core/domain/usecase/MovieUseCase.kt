@@ -5,8 +5,8 @@ import com.rezyfr.dicoding.core.domain.model.Movie
 import kotlinx.coroutines.flow.Flow
 
 interface MovieUseCase {
+    fun discoverTopRatedMovies(): Flow<PagingData<Movie>>
     fun discoverPopularMovies(): Flow<PagingData<Movie>>
-    fun discoverNowPlayingMovies(): Flow<PagingData<Movie>>
     fun searchMovies(query: String): Flow<PagingData<Movie>>
     suspend fun setFavoriteMovie(movie: Movie)
     fun getFavoriteMovies(): Flow<List<Movie>>

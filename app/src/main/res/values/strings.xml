@@ -9,6 +9,6 @@
     <string name="home_image">Home image</string>
     <string name="now_playing">Now Playing</string>
     <string name="vote_count" formatted="false">%s reviews</string>
-    <string name="popular">Popular</string>
+    <string name="nowplaying">NowPlaying</string>
     <string name="favorite_movie">Favorite Movie</string>
 </resources>

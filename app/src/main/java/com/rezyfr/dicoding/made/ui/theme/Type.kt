@@ -17,6 +17,8 @@
 package com.rezyfr.dicoding.made.ui.theme
 
 import androidx.compose.material.Typography
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -64,7 +66,8 @@ val Typography = Typography(
         fontSize = 18.sp,
         lineHeight = 20.sp,
         fontFamily = EczarFontFamily,
-        letterSpacing = 3.sp
+        letterSpacing = 3.sp,
+        color = Color.White
     ),
     subtitle1 = TextStyle(
         fontWeight = FontWeight.Light,
@@ -80,13 +83,14 @@ val Typography = Typography(
     body1 = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        letterSpacing = 0.1.em
+        letterSpacing = 0.1.em,
+        color = Color.White
     ),
     body2 = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
         lineHeight = 20.sp,
-        letterSpacing = 0.1.em
+        letterSpacing = 0.1.em,
     ),
     button = TextStyle(
         fontWeight = FontWeight.Bold,
@@ -102,4 +106,8 @@ val Typography = Typography(
         fontWeight = FontWeight.W500,
         fontSize = 10.sp
     )
+)
+
+fun logoStyle(color: Color) = SpanStyle(color = color).copy(
+    fontWeight = FontWeight.W700, fontSize = 28.sp, letterSpacing = 0.01.em
 )

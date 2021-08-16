@@ -1,6 +1,7 @@
 package com.rezyfr.dicoding.core.data.source.remote
 
 import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import com.rezyfr.dicoding.core.data.source.remote.network.TmdbService
 import com.rezyfr.dicoding.core.domain.model.Movie
 import com.rezyfr.dicoding.core.utils.MappingHelper
@@ -10,7 +11,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class NowPlayingDataSource @Inject constructor(
+class TopRatedDataSource @Inject constructor(
     private val service: TmdbService
 ) : PagingSource<Int, Movie>() {
 
@@ -19,7 +20,7 @@ class NowPlayingDataSource @Inject constructor(
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
         return try {
             val page = params.key ?: firstPage
-            val movieList = service.getMovieByType("now_playing", page)
+            val movieList = service.getMovieByType("top_rated", page)
 
             val data = movieList.results?.let { MappingHelper.mapMovieResponseToDomain(it) }
 
@@ -41,5 +42,9 @@ class NowPlayingDataSource @Inject constructor(
         } catch (exception: Exception) {
             LoadResult.Error(exception)
         }
+    }
+
+    override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
+        return state.anchorPosition
     }
 }

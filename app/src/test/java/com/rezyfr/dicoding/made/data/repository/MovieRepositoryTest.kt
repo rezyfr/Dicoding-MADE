@@ -2,8 +2,8 @@ package com.rezyfr.dicoding.made.data.repository
 
 import com.rezyfr.dicoding.core.data.source.local.LocalDataSource
 import com.rezyfr.dicoding.core.data.source.local.entity.MovieEntity
-import com.rezyfr.dicoding.core.data.source.remote.NowPlayingDataSource
 import com.rezyfr.dicoding.core.data.source.remote.PopularDataSource
+import com.rezyfr.dicoding.core.data.source.remote.TopRatedDataSource
 import com.rezyfr.dicoding.core.data.source.remote.RemoteDataSource
 import com.rezyfr.dicoding.core.data.source.repository.MovieRepository
 import com.rezyfr.dicoding.made.utils.CoroutineTestRule
@@ -25,20 +25,20 @@ class AcademyRepositoryTest {
     @get:Rule
     var coroutinesTestRule = CoroutineTestRule()
 
+    private val upcomingDataSource = Mockito.mock(TopRatedDataSource::class.java)
     private val popularDataSource = Mockito.mock(PopularDataSource::class.java)
-    private val nowPlayingDataSource = Mockito.mock(NowPlayingDataSource::class.java)
     private val remoteDataSource = Mockito.mock(RemoteDataSource::class.java)
     private val localDataSource = Mockito.mock(LocalDataSource::class.java)
     private val repo = MovieRepository(
+        upcomingDataSource,
         popularDataSource,
-        nowPlayingDataSource,
         remoteDataSource,
         localDataSource
     )
 
     @Test
     fun getMovieList() = runBlocking {
-        val dataReceived = repo.discoverNowPlayingMovies()
+        val dataReceived = repo.discoverPopularMovies()
         assertNotNull(dataReceived)
     }
 

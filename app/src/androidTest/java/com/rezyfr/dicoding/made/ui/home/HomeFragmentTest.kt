@@ -27,8 +27,8 @@ class HomeFragmentTest {
         delay(4000)
         onView(withId(R.id.tv_nowplaying)).check(matches(isDisplayed()))
         onView(withId(R.id.rv_nowplaying)).check(matches(isDisplayed()))
-        onView(withId(R.id.rv_popular)).check(matches(isDisplayed()))
-        onView(withId(R.id.tv_popular)).check(matches(isDisplayed()))
+        onView(withId(R.id.rv_now_playing)).check(matches(isDisplayed()))
+        onView(withId(R.id.tv_now_playing)).check(matches(isDisplayed()))
 
         onView(withId(R.id.rv_nowplaying)).perform(
             RecyclerViewActions.actionOnItemAtPosition<RecyclerView.ViewHolder>(0,

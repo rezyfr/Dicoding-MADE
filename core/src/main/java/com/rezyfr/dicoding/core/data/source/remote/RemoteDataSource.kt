@@ -1,6 +1,7 @@
 package com.rezyfr.dicoding.core.data.source.remote
 
 import androidx.paging.PagingSource
+import androidx.paging.PagingState
 import com.rezyfr.dicoding.core.data.source.remote.network.TmdbService
 import com.rezyfr.dicoding.core.data.source.remote.response.MovieDetailResponse
 import com.rezyfr.dicoding.core.domain.model.Movie
@@ -48,5 +49,9 @@ class RemoteDataSource @Inject constructor(
 
     suspend fun fetchMovieDetail(movieId: Int): MovieDetailResponse {
         return service.getMovieDetail(movieId)
+    }
+
+    override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
+        return state.anchorPosition
     }
 }

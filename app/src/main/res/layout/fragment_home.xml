@@ -40,7 +40,7 @@
                 app:layout_constraintTop_toBottomOf="@id/toolbar_main" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_nowplaying"
+                android:id="@+id/rv_upcoming"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="16dp"
@@ -53,16 +53,16 @@
                 tools:listitem="@layout/item_movie_grid_layout" />
 
             <TextView
-                android:id="@+id/tv_popular"
+                android:id="@+id/tv_now_playing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:text="@string/popular"
+                android:text="@string/nowplaying"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_nowplaying" />
+                app:layout_constraintTop_toBottomOf="@id/rv_upcoming" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_popular"
@@ -73,7 +73,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_popular"
+                app:layout_constraintTop_toBottomOf="@id/tv_now_playing"
                 app:spanCount="2"
                 tools:listitem="@layout/item_movie_grid_layout" />
 

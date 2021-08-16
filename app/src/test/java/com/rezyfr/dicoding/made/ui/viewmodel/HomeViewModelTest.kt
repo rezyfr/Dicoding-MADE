@@ -44,10 +44,10 @@ class HomeViewModelTest {
 //                null
 //            )
 //        }
-//        `when`(repo.discoverPopularMovies()).thenReturn(flowOf(PagingData.from(movie.value!!)))
+//        `when`(repo.discoverNowPlayingMovies()).thenReturn(flowOf(PagingData.from(movie.value!!)))
 //        val observer = Mockito.mock(Observer::class.java)
-//        viewModel?.popularMovies?.observeForever(observer as Observer<PagingData<Movie>>)
-//        verify(repo).discoverPopularMovies()
+//        viewModel?.nowplayingMovies?.observeForever(observer as Observer<PagingData<Movie>>)
+//        verify(repo).discoverNowPlayingMovies()
 //    }
 
 //    @Test

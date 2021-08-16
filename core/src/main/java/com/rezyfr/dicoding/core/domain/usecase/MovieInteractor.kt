@@ -8,12 +8,12 @@ import javax.inject.Inject
 
 class MovieInteractor @Inject constructor(private val movieRepository: IMovieRepository) :
     MovieUseCase {
-    override fun discoverPopularMovies(): Flow<PagingData<Movie>> {
-        return movieRepository.discoverPopularMovies()
+    override fun discoverTopRatedMovies(): Flow<PagingData<Movie>> {
+        return movieRepository.discoverTopRatedMovies()
     }
 
-    override fun discoverNowPlayingMovies(): Flow<PagingData<Movie>> {
-        return movieRepository.discoverNowPlayingMovies()
+    override fun discoverPopularMovies(): Flow<PagingData<Movie>> {
+        return movieRepository.discoverPopularMovies()
     }
 
     override fun searchMovies(query: String): Flow<PagingData<Movie>> {
